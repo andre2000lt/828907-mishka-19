@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>HTML Academy: Мишка</title>
+</head>
+<body>
+
+  <!-- ШАПКА  -->
+  <header class="page-header">
+    <!-- Навигация  -->
+    <nav class="page-header__nav main-nav">
+      <!-- Логотип  -->
+      <a class="main-nav__logo page-logo" href="index.html">
+        <img class="page-logo__image" src="https://via.placeholder.com/86x35" alt="Логотип магазина Мишка" width="86" height="35">
+      </a>
+      <button class="main-nav__toggle">Показать меню</button>
+      <!-- Навигация по сайту  -->
+      <div class="main-nav__toggle-menu-wrapper">
+        <ul class="main-nav__site-nav site-nav">
+          <li class="site-nav__item">
+            <a class="site-nav__item-link" href="">Каталог товаров</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav_link" href="">Вязание на заказ</a>
+          </li>
+        </ul>
+        <!-- Поиск  -->
+        <a class="main-nav__search" href="">Поиск по сайту</a>
+        <!-- Корзина  -->
+        <a class="main-nav__cart" href="">Корзина: пока пуста</a>
+      </div> <!-- / .main-nav__toggle-menu-wrapper -->
+    </nav>
+  </header>
+
+  <main class="catalog-main">
+    <section class="catalog">
+      <h1>Каталог товаров</h1>
+
+      <ul class="products">
+        <li class="products__item product">
+          <img class="product__image" src="https://via.placeholder.com/260x195" alt="Игрушка: Зайчик-попрыгайчик" width="260" height="195">
+          <h3 class="product__title">Зайчик-попрыгайчик</h3>
+          <p class="product__description">Рост 30 см, вес 200 г</p>
+          <div class="product__cart-wrapper">
+            <span class="product__price">1 200 руб.</span>
+            <a class="product__cart-button">cart</a>
+          </div>
+          <div class="product__options product-options">
+            <p class="product-options__big-text">Добавить в корзину</p>
+            <p class="product-options__small-text">Выберите размер:</p>
+            <ul class="product-options__list">
+              <li class="product-options__option">S</li>
+              <li class="product-options__option">M</li>
+              <li class="product-options__option">L</li>
+            </ul>
+            <a class="product-options__order-button" href="">Добавить</a>
+          </div>
+        </li>
+        <li class="products__item">
+          <img class="products__image" src="https://via.placeholder.com/260x195" alt="Корзинка для белья" width="260" height="195">
+          <h3 class="product__title">Корзинка для белья</h3>
+          <p class="product__description">Диаметр 15 см, высота 10 см</p>
+          <div class="product__cart-wrapper">
+            <span class="product__price">690 руб.</span>
+            <a class="product__cart-button">cart</a>
+          </div>
+          <div class="product__options product-options">
+            <p class="product-options__big-text">Добавить в корзину</p>
+            <p class="product-options__small-text">Выберите размер:</p>
+            <ul class="product-options__list">
+              <li class="product-options__option">S</li>
+              <li class="product-options__option">M</li>
+              <li class="product-options__option">L</li>
+            </ul>
+            <a class="product-options__order-button" href="">Добавить</a>
+          </div>
+        </li>
+        <li class="products__item">
+          <img class="products__image" src="https://via.placeholder.com/260x195" alt="Большая корзинка для игрушек" width="260" height="195">
+          <h3 class="product__title">Большая корзинка для игрушек</h3>
+          <p class="product__description">Диаметр 30 см, высота 30 см</p>
+          <div class="product__cart-wrapper">
+            <span class="product__price">1 500 руб.</span>
+            <a class="product__cart-button">cart</a>
+          </div>
+          <div class="product__options product-options">
+            <p class="product-options__big-text">Добавить в корзину</p>
+            <p class="product-options__small-text">Выберите размер:</p>
+            <ul class="product-options__list">
+              <li class="product-options__option">S</li>
+              <li class="product-options__option">M</li>
+              <li class="product-options__option">L</li>
+            </ul>
+            <a class="product-options__order-button" href="">Добавить</a>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- ПОДВАЛ  -->
+  <footer class="page-footer">
+    <ul class="page-footer-socials socials">
+      <li class="socials__item socials__item--instagram">
+        <a href="https://www.instagram.com/">Инстаграм</a>
+      </li>
+      <li class="socials__item socials__item--facebook">
+        <a href="https://www.facebook.com/">Фейсбук</a>
+      </li>
+      <li class="socials__item socials__item--twitter">
+        <a href="https://www.twitter.com/">Твиттер</a>
+      </li>
+    </ul>
+
+    <div class="page-footer__developer developer">
+      <span class="developer__text">Разработано</span>
+      <a class="developer__link" href="https://htmlacademy.ru/intensive/adaptive">htmlacademy</a>
+    </div>
+  </footer>
+</body>
+</html>
