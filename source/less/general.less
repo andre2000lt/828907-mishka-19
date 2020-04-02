@@ -1,0 +1,74 @@
+
+// Примеси
+.general-font() {
+  font-family: "Open Sans", "Arial", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #444444;
+  line-height: 2;
+  letter-spacing: normal;
+}
+
+.general-font-family() {
+  font-family: "Open Sans", "Arial", sans-serif;
+  font-weight: 400;
+}
+
+.general-font-family-bold() {
+  font-family: "Open Sans", "Arial", sans-serif;
+  font-weight: 700;
+}
+
+.section-title() {
+  .general-font-family-bold();
+  font-size: 25px;
+  line-height: 1.2;
+  color: black;
+
+  margin: 0;
+}
+
+.list-style-none() {
+  padding-left: 0;
+  list-style: none;
+}
+
+/* -- ОБЩИЕ -- */
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  .general-font();
+
+  min-width: 280px;
+  background-color: white;
+}
+
+.container {
+  width: 80%;
+  padding: 0 10px;
+  margin: auto;
+}
+
+.visually-hidden {
+   position: absolute;
+
+   width: 1px;
+   height: 1px;
+   margin: -1px;
+   border: 0;
+   padding: 0;
+
+   clip: rect(0 0 0 0);
+   overflow: hidden;
+ }
