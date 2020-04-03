@@ -1,0 +1,41 @@
+/* -- ОБЩИЕ -- */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  .general-font();
+
+  min-width: 280px;
+  background-color: white;
+}
+
+.container {
+  width: 80%;
+  padding: 0 10px;
+  margin: auto;
+}
+
+.visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
