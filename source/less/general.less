@@ -17,7 +17,9 @@ img {
 body {
   .general-font();
 
-  min-width: 320px;
+  width: 320px;
+  margin: 0 auto;
+
   background-color: white;
 }
 
@@ -38,4 +40,19 @@ body {
 
   clip: rect(0 0 0 0);
   overflow: hidden;
+}
+
+@media (min-width: 772px) {
+  body {
+    width: auto;
+    min-width: 772px;
+
+    background-color: white;
+  }
+
+  .container {
+    width: 772px;
+    padding: 0 52px;
+    margin: auto;
+  }
 }
