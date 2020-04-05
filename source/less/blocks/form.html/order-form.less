@@ -1,1 +1,60 @@
-// Форма заказа
+/* -- Форма заказа-- */
+.order-form {
+  padding-bottom: 20px;
+}
+
+.order-form__fieldset {
+  padding: 0;
+  padding-bottom: 30px;
+
+  &--radio {
+    padding-top: 24px;
+  }
+
+  &--checkbox {
+    padding-top: 20px;
+  }
+
+  &--name {
+    padding-top: 30px;
+  }
+
+  &--tel,
+  &--email {
+    padding-top: 5px;
+  }
+
+  &--additional {
+    padding-top: 20px;
+  }
+
+  &:last-child {
+    margin-bottom: 15px;
+  }
+}
+
+.order-form__legend {
+  .general-font-family-bold();
+  font-size: 17px;
+  line-height: 0.94;
+  color: #63d1bb;
+}
+
+.order-form__radio-list,
+.order-form__checkbox-list,
+.order-form__input-list {
+  .list-style-none();
+}
+
+
+.order-form__label {
+  .general-font-family-bold();
+  font-size: 17px;
+  line-height: 1.06;
+  color: black;
+}
+
+.order-form__info-text {
+  margin: 0;
+  margin-bottom: 28px;
+}
