@@ -10,3 +10,44 @@
   line-height: 1.41;
   color: black;
 }
+
+@media (min-width: @tablet-width) {
+  .site-nav {
+    display: flex;
+    flex-wrap: wrap;
+
+    font-size: 15px;
+
+    width: 403px;
+  }
+
+  .site-nav__item {
+    margin-right: 25px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .site-nav {
+    display: flex;
+    flex-wrap: wrap;
+
+    font-size: 17px;
+
+    width: 448px;
+  }
+
+  .site-nav__item {
+    min-width: 182px;
+    max-width: 224px;
+    margin-right: 0;
+
+    &:nth-child(odd) {
+      padding-right: 35px;
+      border-right: 1px solid black;
+    }
+
+    &:nth-child(even) {
+      padding-left: 35px;
+    }
+  }
+}
