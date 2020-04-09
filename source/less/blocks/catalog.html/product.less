@@ -1,5 +1,16 @@
 /* -- Продукт -- */
+.product__description-wrapper {
+  padding-left: 28px;
+  padding-right: 28px;
+  padding-top: 25px;
+}
+
 .product__title {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.product__title a {
   .general-font-family-bold();
   font-size: 17px;
   line-height: 1.41;
@@ -11,6 +22,8 @@
   font-size: 13px;
   line-height: 2.31;
   color: #444444;
+
+  margin: 0;
 }
 
 .product__price {
@@ -22,4 +35,85 @@
 
 .product__options {
   display: none;
+}
+
+// ПЛАНШЕТ
+@media (min-width: @tablet-width) {
+  .product {
+    display: flex;
+  }
+
+  .product__image-link {
+    width: 50%;
+  }
+
+  .product__image {
+    display: block;
+    width: 334px;
+    height: 334px;
+  }
+
+  .product__description-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    width: 50%;
+    border-top: 1px solid #ececec;
+    border-right: 1px solid #ececec;
+    border-bottom: 1px solid #ececec;;
+  }
+
+  .product__title a {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  .product__description {
+    font-size: 15px;
+    line-height: 2;
+  }
+
+  .product__cart-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    min-height: 70px;
+    margin-top: auto;
+    border-top: 1px solid #ececec;
+  }
+}
+
+// ДЕСКТОП
+@media (min-width: @desktop-width) {
+  .product {
+    flex-direction: column;
+
+    width: 316px;
+    margin-right: 50px;
+  }
+
+  .product__image-link {
+    display: block;
+    width: auto;
+    height: 462px;
+  }
+
+  .product__image {
+    display: block;
+    width: 316px;
+    height: 462px;
+  }
+
+  .product__description-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    width: auto;
+    border-top: none;
+    border-right: 1px solid #ececec;
+    border-left: 1px solid #ececec;
+    border-bottom: 1px solid #ececec;;
+  }
 }

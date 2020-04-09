@@ -1,6 +1,64 @@
 /* ПОДВАЛ */
 .page-footer {
-  padding: 20px 0;
-
   background-color: #f1f1f1;
+}
+
+.page-footer__logo {
+  display: none;
+}
+
+.page-footer__socials-wrapper {
+  width: 150px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: 0 auto;
+
+  overflow: hidden;
+}
+
+.page-footer__developer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 185px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: 0 auto;
+}
+
+.page-footer__developer-text {
+  .general-font-family-bold();
+  font-size: 19px;
+  line-height: 0.95;
+  color: black
+}
+
+
+
+/* -- ПЛАНШЕТ  -- */
+@media (min-width: @tablet-width) {
+  .page-footer__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    min-height: 143px;
+  }
+
+  .page-footer__socials-wrapper {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: 0;
+  }
+
+  .page-footer__developer
+  {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: 0;
+  }
+
+  .page-footer__logo {
+    display: block;
+  }
 }

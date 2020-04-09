@@ -6,7 +6,8 @@
 }
 
 .features__title {
-  .section-title();
+  .section-title-mobile();
+  margin-bottom: 35px;
 }
 
 .features__list {
@@ -18,4 +19,58 @@
   font-size: 17px;
   line-height: 1.18;
   color: black;
+
+  margin-bottom: 30px;
+}
+
+/* -- ПЛАНШЕТ  -- */
+@media (min-width: @tablet-width) {
+  .features__title {
+    .section-title-tablet();
+  }
+
+  .features__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .features__item {
+    font-size: 20px;
+    line-height: 1.1;
+
+    width: 300px;
+    margin-right: 34px;
+    margin-bottom: 55px;
+
+    &:nth-child(2) {
+      order: 3;
+    }
+
+    &:nth-child(3) {
+      order: 5;
+    }
+
+    &:nth-child(4) {
+      order: 2;
+    }
+
+    &:nth-child(5) {
+      order: 4;
+    }
+
+    &:nth-child(6) {
+      order: 6;
+    }
+  }
+}
+
+/* -- ДЕСКТОП  -- */
+@media (min-width: @desktop-width) {
+  .features__inner {
+    padding-left: 225px;
+  }
+
+  .features__title {
+    .section-title-tablet();
+  }
 }

@@ -1,4 +1,29 @@
 .page-header {
-  padding: 20px 0;
-  box-shadow: 0 1px 0 0 #ececec, inset 0 1px 0 0 #ececec;
+  border-top: 1px solid #ececec;
+  border-bottom: @header-border;
+}
+
+.page-header__nav {
+  width: 260px;
+  margin: 0 auto;
+}
+
+@media (min-width: @tablet-width) {
+  .page-header {
+    border-bottom: none;
+
+    background-color: #fafafa;
+
+    &--catalog {
+      background-color: #f1f1f1;
+    }
+
+    &--form {
+      background-color: #f1f1f1;
+    }
+  }
+
+  .page-header__nav {
+    width: auto;
+  }
 }
