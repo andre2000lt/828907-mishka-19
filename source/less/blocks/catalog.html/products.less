@@ -1,10 +1,17 @@
 /* -- Список продуктов -- */
-.products {
+.products__list {
   .list-style-none();
 }
 
 .products__item {
-  &:not(:last-child) {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
+}
+
+// ДЕСКТОП
+@media (min-width: @desktop-width) {
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1100px;
   }
 }
