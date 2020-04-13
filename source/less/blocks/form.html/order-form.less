@@ -4,7 +4,6 @@
 }
 
 .order-form__fieldset {
-  padding: 0;
   padding-bottom: 30px;
 
   &--radio {
@@ -54,7 +53,137 @@
   color: black;
 }
 
+.order-form__input-text {
+  width: 260px;
+}
+
+.order-form__textarea {
+  width: 260px;
+}
+
+.order-form__bottom-wrapper {
+  margin-bottom: 28px;
+}
+
 .order-form__info-text {
   margin: 0;
-  margin-bottom: 28px;
+}
+
+.order-form__submit {
+  width: 260px;
+}
+
+// ПЛАНШЕТ
+@media (min-width: @tablet-width) {
+  .order-form {
+    padding-bottom: 50px;
+  }
+
+  .order-form__legend {
+    display: block;
+
+    width: 168px;
+    padding-right: 15px;
+  }
+
+  .order-form__fieldset--checkbox,
+  .order-form__fieldset--tel,
+  .order-form__fieldset--email {
+    background-color: #f1f1f1;
+  }
+
+  .order-form__fieldset > .container {
+    display: flex;
+    border: none;
+  }
+
+  .order-form__checkbox-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    width: 500px;
+  }
+
+  .order-form__checkbox-item {
+    width: 238px;
+
+    &:nth-child(odd) {
+      margin-right: 15px;
+    }
+  }
+
+  .order-form__input-list {
+    width: 500px;
+  }
+
+  .order-form__input-text-item {
+    display: flex;
+  }
+
+  .order-form__input-text-item .order-form__label {
+    max-width: 150px;
+    margin-right: 25px;
+  }
+
+  .order-form__input-text {
+    flex-grow: 1;
+  }
+
+  .order-form__textarea {
+    width: 500px;
+    height: 140px;
+  }
+
+  .order-form__bottom-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .order-form__submit {
+    width: 230px;
+  }
+
+  .order-form__info-text {
+    font-size: 17px;
+    line-height: 1.76;
+  }
+}
+
+// ДЕСКТОП
+@media (min-width: @desktop-width) {
+  .order-form__legend {
+    width: 175px;
+    padding-right: 15px;
+    text-align: center;
+  }
+
+  .order-form__checkbox-list {
+    width: 750px;
+  }
+
+  .order-form__checkbox-item {
+    &:nth-child(odd) {
+      margin-right: 0;
+    }
+
+    &:not(:nth-child(3n)) {
+      margin-right: 15px;
+    }
+  }
+
+  .order-form__input-list {
+    width: 700px;
+  }
+
+  .order-form__input-text--phone,
+  .order-form__input-text--email,
+  .order-form__textarea {
+    flex-grow: 0;
+    width: 700px;
+  }
+
+  .order-form__bottom-wrapper {
+    width: 800px;
+  }
 }

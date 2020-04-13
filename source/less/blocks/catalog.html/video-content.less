@@ -1,6 +1,5 @@
 /* -- ВИДЕО БЛОК -- */
 .video-content {
-  padding-top: 25px;
   padding-bottom: 33px;
 }
 
@@ -9,6 +8,13 @@
   font-size: 17px;
   line-height: 1.41;
   color: black;
+
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.video-content__image {
+  margin-bottom: 30px;
 }
 
 .video-content__description {
@@ -16,4 +22,86 @@
   font-size: 13px;
   line-height: 1.85;
   color: #444444;
+
+  margin: 0;
+  margin-bottom: 25px;
+  margin-left: 33px;
+  margin-right: 33px;
+}
+
+.video-content__order-link {
+  display: block;
+
+  width: 192px;
+  margin: 0 auto;
+}
+
+// ПЛАНШЕТ
+@media (min-width: @tablet-width) {
+  .video-content {
+    padding-bottom: 60px;
+  }
+
+  .video-content__sub-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .video-content__title {
+    font-size: 20px;
+    line-height: 1.2;
+
+    margin-bottom: 33px;
+  }
+
+  .video-content__image {
+    order: -1;
+
+    width: 668px;
+    height: 455px;
+    margin-bottom: 40px;
+  }
+
+  .video-content__description {
+    font-size: 15px;
+    line-height: 2;
+
+    margin-left: 33px;
+    margin-right: 33px;
+  }
+
+  .video-content__order-link {
+    width: 584px;
+  }
+}
+
+// ДЕСКТОП
+@media (min-width: @desktop-width) {
+  .video-content__inner {
+    position: relative;
+
+    width: 1050px;
+    min-height: 457px;
+    padding-left: 755px;
+    padding-right: 55px;
+    padding-top: 98px;
+    border: 1px solid #ececec;
+  }
+
+  .video-content__description {
+    margin: 0 0 45px;
+  }
+
+  .video-content__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 682px;
+    height: 455px;
+  }
+
+  .video-content__order-link {
+    width: 230px;
+  }
 }
