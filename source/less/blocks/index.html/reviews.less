@@ -1,6 +1,6 @@
 /* -- Отзывы -- */
 .reviews {
-  margin-bottom: 45px;
+  padding-bottom: 45px;
 }
 
 .reviews__title {
@@ -17,6 +17,9 @@
   font-size: 15px;
   line-height: 2;
   color: #444444;
+
+  margin: 0;
+  margin-bottom: 30px;
 }
 
 .reviews__author {
@@ -25,6 +28,8 @@
 }
 
 .reviews__author-name {
+  display: block;
+
   .general-font-family-bold();
   font-size: 17px;
   line-height: 1.41;
@@ -33,6 +38,8 @@
 }
 
 .reviews__author-nickname {
+  display: block;
+
   .general-font-family();
   font-size: 17px;
   line-height: 1.76;
@@ -43,4 +50,83 @@
 .reviews__nav {
   padding-top: 1px;
   margin-bottom: 38px;
+}
+
+.reviews__button {
+  width: 48%;
+}
+
+// ПЛАНШЕТ
+@media (min-width: @tablet-width) {
+  .reviews {
+    background-image: url("../img/review@1x.jpg");
+    background-repeat: no-repeat;
+
+    padding-bottom: 65px;
+  }
+
+  .reviews__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    min-height: 457px;
+    padding-top: 80px;
+  }
+
+  .reviews__title {
+    .section-title-tablet();
+
+    width: 380px;
+  }
+
+  .reviews__item {
+    order: 2;
+
+    width: 100%;
+  }
+
+  .reviews__text {
+    font-size: 17px;
+    line-height: 1.76;
+
+    padding-bottom: 60px;
+  }
+
+  .reviews__item-bottom-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .reviews__author {
+    width: 400px;
+  }
+
+  .reviews__author-name {
+    font-size: 18px;
+    line-height: 1.33;
+  }
+
+  .reviews__nav {
+    width: 140px;
+  }
+
+  .reviews__write-button {
+    margin-left: auto;
+  }
+}
+
+// ДЕСКТОП
+@media (min-width: @desktop-width) {
+  .reviews {
+    background-image: none;
+  }
+
+  .reviews__inner {
+    padding-left: 225px;
+
+    background-image: url("../img/review@1x.jpg");
+    background-repeat: no-repeat;
+    background-position: 50px 0;
+  }
 }

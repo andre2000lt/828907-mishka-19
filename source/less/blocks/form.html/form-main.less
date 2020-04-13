@@ -1,15 +1,12 @@
 /* -- main страницы с формой -- */
-.form-main {
-  margin-bottom: 35px;
-}
-
 .form-main__page-title {
   .general-font-family-bold();
   font-size: 27px;
   line-height: 1.11;
   color: black;
+  text-align: center;
 
-  padding: 10px 0;
+  padding: 70px 0;
   margin: 0;
   margin-bottom: 25px;
 
@@ -23,4 +20,23 @@
   color: #444444;
 
   margin-bottom: 25px;
+}
+
+// ПЛАНШЕТ
+@media (min-width: @tablet-width) {
+  .form-main__page-title {
+    .section-title-tablet();
+  }
+
+  .form-main__welсome-message {
+    font-size: 17px;
+    line-height: 1.76;
+  }
+}
+
+// ДЕСКТОП
+@media (min-width: @desktop-width) {
+  .form-main__page-title {
+    .section-title-desktop();
+  }
 }
