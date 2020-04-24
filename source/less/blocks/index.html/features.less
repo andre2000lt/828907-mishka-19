@@ -4,12 +4,12 @@
   padding-top: 34px;
   padding-bottom: 25px;
 
-  &:before {
+  &::before {
     position: absolute;
     width: 100%;
     height: 6px;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     content: "";
 
     background-image: url("../img/bg-zigzag-line.svg");
@@ -105,17 +105,17 @@
 }
 
 /* ПЛАНШЕТ - ПРЕИМУЩЕСТВА */
-@media (min-width: @tablet-width) {
+@media (min-width: @tablet_width) {
   .features {
     padding-top: 63px;
     padding-bottom: 25px;
 
-    &:before {
+    &::before {
       position: absolute;
       width: 100%;
       height: 15.36px;
-      top: 0px;
-      left: 0px;
+      top: 0;
+      left: 0;
       content: "";
 
       background-image: url("../img/bg-zigzag-line-tablet.svg");
@@ -176,7 +176,7 @@
 }
 
 /* ДЕСКТОП - ПРЕИМУЩЕСТВА */
-@media (min-width: @desktop-width) {
+@media (min-width: @desktop_width) {
   .features {
     padding-top: 80px;
 
@@ -190,7 +190,7 @@
 
     padding-left: 225px;
 
-    &:before {
+    &::before {
       z-index: 10;
       position: absolute;
       width: 1050px;

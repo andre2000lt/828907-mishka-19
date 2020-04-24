@@ -46,12 +46,11 @@
 .week-product__params td {
   .general-font-family();
   font-size: 15px;
-  line-height: 1.33;
   color: #444444;
+  line-height: 19px;
 
   padding-bottom: 10px;
   padding-top: 9px;
-  line-height: 19px;
   border-bottom: @header-border;
 
   vertical-align: top;
@@ -86,17 +85,17 @@
 }
 
 /* ПЛАНШЕТ - ТОВАР НЕДЕЛИ */
-@media (min-width: @tablet-width) {
+@media (min-width: @tablet_width) {
   .week-product {
     position: relative;
     padding-top: 46px;
     padding-bottom: 10px;
 
-    &:before {
+    &::before {
       position: absolute;
       width: 100%;
       top: -12px;
-      left: 0px;
+      left: 0;
       content: "";
 
       height: 24px;
@@ -110,7 +109,7 @@
     flex-wrap: wrap;
   }
 
-/* Заголовок и подзаголовок товара недели ПЛАНШЕТ */
+  /* Заголовок и подзаголовок товара недели ПЛАНШЕТ */
   .week-product__title-wrapper {
     display: flex;
     justify-content: space-between;
@@ -135,13 +134,13 @@
   }
 
   /* Текст описания товара недели ПЛАНШЕТ */
-    .week-product__description {
-      font-size: 17px;
-      line-height: 1.76;
+  .week-product__description {
+    font-size: 17px;
+    line-height: 1.76;
 
-      min-height: 90px;
-      margin-bottom: 34px;
-    }
+    min-height: 90px;
+    margin-bottom: 34px;
+  }
 
   /* Таблица параметров товара недели ПЛАНШЕТ */
   .week-product__params-wrapper {
@@ -151,7 +150,7 @@
     padding-bottom: 180px;
   }
 
-/* Картинка товара недели ПЛАНШЕТ */
+  /* Картинка товара недели ПЛАНШЕТ */
   .week-product__image-wrapper {
     margin: 0;
     padding-top: 5px;
@@ -164,7 +163,7 @@
     height: 404px;
   }
 
-/* Цена / кнопка заказа товара недели ПЛАНШЕТ */
+  /* Цена / кнопка заказа товара недели ПЛАНШЕТ */
   .week-product__price-wrapper {
     min-height: 100px;
     margin-top: -155px;
@@ -184,17 +183,17 @@
 }
 
 /* ДЕСКТОП - ТОВАР НЕДЕЛИ */
-@media (min-width: @desktop-width) {
+@media (min-width: @desktop_width) {
   .week-product {
     position: relative;
     padding-top: 55px;
     padding-bottom: 73px;
 
-    &:before {
+    &::before {
       position: absolute;
       width: 100%;
       top: -16px;
-      left: 0px;
+      left: 0;
       content: "";
 
       background-image: url("../img/zigzag-fill-desktop.svg");
@@ -235,11 +234,11 @@
   }
 
   /* Текст описания товара недели ДЕСКТОП */
-    .week-product__description {
-      margin-bottom: 45px;
-    }
+  .week-product__description {
+    margin-bottom: 45px;
+  }
 
-/* Картинка товара недели ДЕСКТОП */
+  /* Картинка товара недели ДЕСКТОП */
   .week-product__image-wrapper {
     margin: 0;
     padding-top: 15px;
@@ -250,7 +249,7 @@
     height: 636px;
   }
 
-/* Цена / кнопка заказа товара недели ДЕСКТОП */
+  /* Цена / кнопка заказа товара недели ДЕСКТОП */
   .week-product__price-wrapper {
     margin-left: 175px;
     margin-top: -108px;
