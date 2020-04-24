@@ -14,9 +14,14 @@ img {
   height: auto;
 }
 
+html {
+  width: 100vw;
+}
+
 body {
   .general-font();
 
+  min-width: @mobile_width;
   margin: 0 auto;
 
   background-color: white;
@@ -44,17 +49,18 @@ body {
   white-space: nowrap;
 }
 
+
 // ПЛАНШЕТ
-@media (min-width: @tablet-width) {
+@media (min-width: @tablet_width) {
   body {
     width: auto;
-    min-width: @tablet-width;
+    min-width: @tablet_width;
 
     background-color: white;
   }
 
   .container {
-    width: @tablet-width;
+    width: @tablet_width;
     padding: 0 50px;
     margin: auto;
   }
@@ -64,16 +70,16 @@ body {
   }
 }
 
-@media (min-width: @desktop-width) {
+@media (min-width: @desktop_width) {
   body {
     width: auto;
-    min-width: @desktop-width;
+    min-width: @desktop_width;
 
     background-color: white;
   }
 
   .container {
-    width: @desktop-width;
+    width: @desktop_width;
     padding: 0 50px;
     margin: auto;
   }

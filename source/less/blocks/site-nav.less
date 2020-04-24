@@ -4,48 +4,83 @@
   .list-style-none();
 }
 
+.site-nav__item {
+  display: flex; // для ie 11 - bug min-height
+  flex-direction: column;
+
+  border-bottom: @header-border;
+}
+
 .site-nav__link {
+  display: flex;
+  align-items: center;
+
+  width: 215px;
+  min-height: 78px;
+  margin-left: calc((100% - @mobile_width) / 2 + @mobile_padding + 45px);
+  padding-top: 20px;
+  padding-bottom: 20px;
+
   .general-font-family-bold();
   font-size: 17px;
   line-height: 1.41;
   color: black;
+
+  &:hover {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  &:active {
+    color: rgba(0, 0, 0, 0.3);
+  }
 }
 
-@media (min-width: @tablet-width) and (max-width: @tablet-width-only) {
+@media (min-width: @tablet_width) and (max-width: @tablet_width_only) {
   .site-nav {
-    box-sizing: content-box;
-
     display: flex;
     flex-wrap: wrap;
 
-    width: 388px;
-    padding-left: calc((100% - 668px) / 2);
+    width: 403px;
+    margin-left: calc((100% - @tablet_width) / 2 + @tablet_padding);
     padding-right: 15px;
-    padding-top: 15px;
+    padding-top: 17px;
     padding-bottom: 15px;
 
     background-color: rgba(255, 255, 255, 0);
   }
 
   .site-nav__item {
-    margin-right: 25px;
+    display: block;
+    width: 140px;
+    margin-right: 28px;
+    margin-bottom: 20px;
+    border: none;
   }
 
   .site-nav__link {
     font-size: 15px;
     line-height: 1.6;
+
+    display: block;
+
+    width: auto;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
   }
 }
 
-@media (min-width: @desktop-width) {
+@media (min-width: @desktop_width) {
   .site-nav {
-    box-sizing: content-box;
-
     display: flex;
     flex-wrap: wrap;
 
+    box-sizing: content-box;
+
     width: 450px;
-    padding-left: calc((100% - 1050px) / 2);
+    min-height: 88px;
+    padding: 0;
+    padding-left: calc((100vw - @desktop_width) / 2 + @desktop_padding);
     border-bottom: @header-border;
 
     background-color: white;
@@ -53,11 +88,12 @@
 
   .site-nav__item {
     display: flex;
+    flex-direction: row;
     align-items: center;
 
+    border: 0;
     min-width: 182px;
     max-width: 224px;
-    margin-right: 0;
 
     &:nth-child(odd) {
       padding-right: 35px;
@@ -70,7 +106,14 @@
   }
 
   .site-nav__link {
+    display: block;
+
     font-size: 17px;
     line-height: 1.41;
+
+    width: auto;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
   }
 }

@@ -1,4 +1,8 @@
-/* -- Список продуктов -- */
+/* -- СПИСОК ПРОДУКТОВ -- */
+.products {
+  padding-top: 30px;
+}
+
 .products__list {
   .list-style-none();
 }
@@ -7,11 +11,56 @@
   margin-bottom: 30px;
 }
 
-// ДЕСКТОП
-@media (min-width: @desktop-width) {
+/* ТАБЛЕТ - СПИСОК ПРОДУКТОВ */
+@media (min-width: @tablet_width) {
   .products {
+    position: relative;
+
+    padding-top: 67px;
+
+    &::before {
+      position: absolute;
+      width: 100%;
+      top: -24px;
+      left: 0;
+      content: "";
+
+      height: 24px;
+      background-image: url("../img/zigzag-fill-tablet.svg");
+      background-repeat: repeat-x;
+    }
+  }
+
+  .products__item {
+    margin-bottom: 54px;
+  }
+}
+/* ДЕСКТОП - СПИСОК ПРОДУКТОВ */
+@media (min-width: @desktop_width) {
+  .products {
+    padding-top: 122px;
+
+    &::before {
+      position: absolute;
+      width: 100%;
+      top: -24px;
+      left: 0;
+      content: "";
+
+      background-image: url("../img/zigzag-fill-desktop-catalog.svg");
+      background-position: 0 top;
+      background-repeat: repeat-x;
+    }
+  }
+
+  .products__inner {
+    overflow: hidden;
+  }
+
+  .products__list {
     display: flex;
     flex-wrap: wrap;
+
     width: 1100px;
   }
 }
