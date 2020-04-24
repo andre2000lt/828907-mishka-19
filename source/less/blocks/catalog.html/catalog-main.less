@@ -1,20 +1,25 @@
-/* -- ГЛАВНАЯ -- */
+/* -- КАТАЛОГ -- */
 .catalog-main {
   padding-bottom: 28px;
   margin-bottom: 30px;
 }
 
+/* -- загаловок каталога  -- */
 .catalog-main__page-title {
-  .section-title-mobile();
-
+  .general-font-family-bold();
+  font-size: 27px;
+  line-height: 1.11;
+  color: black;
   text-align: center;
 
+  min-height: 178px;
   padding: 74px 0;
-  margin-bottom: 30px;
+  margin: 0;
 
   background-color: #f1f1f1;
 }
 
+/* -- список товаров каталога  -- */
 .catalog-main__catalog {
   margin-bottom: 30px;
 }
@@ -23,16 +28,19 @@
 @media (min-width: @tablet-width) {
   .catalog-main__page-title {
     .section-title-tablet();
+
+    min-height: 162px;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 }
 
 // ДЕСКТОП
 @media (min-width: @desktop-width) {
-  .catalog__inner {
-    overflow: hidden;
-  }
-
   .catalog-main__page-title {
     .section-title-desktop();
+
+    min-height: 200px;
+    padding-top: 33px;
   }
 }

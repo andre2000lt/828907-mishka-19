@@ -14,9 +14,14 @@ img {
   height: auto;
 }
 
+html {
+  width: 100vw;
+}
+
 body {
   .general-font();
 
+  min-width: @mobile-width;
   margin: 0 auto;
 
   background-color: white;
@@ -43,6 +48,7 @@ body {
 .nowrap {
   white-space: nowrap;
 }
+
 
 // ПЛАНШЕТ
 @media (min-width: @tablet-width) {

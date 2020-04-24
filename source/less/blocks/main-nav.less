@@ -1,73 +1,162 @@
-/*ГЛАВНАЯ НАВИГАЦИЯ */
+/* ГЛАВНАЯ НАВИГАЦИЯ */
+.main-nav {
+  display: flex; // ie11 баг min-height
+  flex-direction: column;
+
+  position: relative;
+}
+
+/* логотип */
 .main-nav__logo-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 79px;
+  border-bottom: @header-border;
+}
+
+.main-nav__logo {
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.main-nav__logo-image {
+  vertical-align: bottom;
+  width: 86px;
   height: 35px;
 }
 
+/* переключатель меню */
 .main-nav__toggle {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 30px;
+  right: calc((100% - @mobile-width) / 2 + @mobile-padding);
+  z-index: 5;
+
+  width: 20.5px;
+  height: 20.5px;
+  border-style: none;
+  border-width: 0;
+
+  background-color: rgba(255, 255, 255, 0);
+  background-repeat: no-repeat;
+
+  cursor: pointer;
+
+  &--close {
+    background-image: url("../img/icon-menu-close.svg");
+  }
+
+  &--open {
+    top: 33px;
+
+    width: 20px;
+    height: 14px;
+
+    background-image: url("../img/icon-menu-open.svg");
+  }
 }
 
-/* поиск и корзина*/
+/* поиск и корзина */
+.main-nav__search-wrapper,
+.main-nav__cart-wrapper {
+  display: flex; // для ie 11 - bug min-height
+  flex-direction: column;
+
+  border-bottom: @header-border;
+}
+
 .main-nav__search,
 .main-nav__cart {
-  display: block;
+  display: flex;
+  align-items: center;
+
+  width: 260px;
+  min-height: 78px;
+  margin-left: calc((100% - @mobile-width) / 2 + @mobile-padding);
+  padding-top: 20px;
+  padding-bottom: 20px;
 
   .general-font-family-bold();
   font-size: 17px;
   line-height: 1.41;
   color: black;
+
+  &:hover {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  &:active {
+    color: rgba(0, 0, 0, 0.3);
+  }
 }
 
+.main-nav__search-icon-svg,
+.main-nav__cart-icon-svg {
+  flex-shrink: 0;
+  fill: #231F20;
+}
+
+.main-nav__search:hover .main-nav__search-icon-svg,
+.main-nav__cart:hover .main-nav__cart-icon-svg {
+  fill: #63d1bb;
+}
+
+.main-nav__search-text {
+  padding-left: 27px;
+}
+
+.main-nav__cart-text {
+  padding-left: 24px;
+}
+
+/* акции и скидки */
 .main-nav__promotions-menu {
   display: none;
-
-  width: 700px;
-  .list-style-none();
 }
 
-.main-nav__promotions-item {
-  margin-right: 60px;
-}
-
-.main-nav__promotions-link {
-  .general-font-family-bold();
-  font-size: 15px;
-  line-height: 1.6;
-  color: black;
-}
-
+/* бесплатная доставка */
 .main-nav__bonus-text {
   display: none;
-
-  .general-font-family();
-  font-size: 15px;
-  line-height: 1.6;
-  color: #444444;
 }
 
-// ПЛАНШЕТ
+ /* ПЛАНШЕТ - ГЛАВНАЯ НАВИГАЦИЯ */
 @media (min-width: @tablet-width) {
   .main-nav {
-    display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
   }
 
+  /* логотип ПЛАНШЕТ */
   .main-nav__logo-wrapper {
-    box-sizing: content-box;
-
     display: flex;
-    align-items: center;
+    justify-content: flex-start;
 
-    width: 321px;
+    width: calc((100% - @tablet-width) / 2 + @tablet-padding + 321px);
+
     min-height: 88px;
-    padding-left: calc((100% - 668px) / 2);
     border-bottom: @header-border;
 
     background-color: white;
   }
 
+  .main-nav__logo {
+    margin-left: calc(100% - 321px);
+  }
+
+  .main-nav__logo-image {
+    vertical-align: bottom;
+    width: 112px;
+    height: 46px;
+  }
+
+/* переключатель меню ПЛАНШЕТ */
   .main-nav__toggle {
     display: none;
   }
@@ -77,49 +166,64 @@
     order: 2;
   }
 
-  .main-nav__search {
+/* поиск ПЛАНШЕТ */
+  .main-nav__search-wrapper {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row;
 
-    width: 81px;
-
+    width: 82px;
     border-left: @header-border;
-    border-bottom: @header-border;
 
     background-color: white;
+  }
+
+  .main-nav__search {
+    justify-content: center;
+
+    padding: 0;
+    margin: 0;
   }
 
   .main-nav__search-text {
     display: none;
   }
 
-  .main-nav__cart {
-    box-sizing: content-box;
-
+/* корзина ПЛАНШЕТ */
+  .main-nav__cart-wrapper {
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
-
-    width: 264px;
-    padding-right: calc((100% - 668px) / 2);
+    flex-direction: row;
+    width: calc((100% - @tablet-width) / 2 + @tablet-padding + 265px);
     border-left: @header-border;
-    border-bottom: @header-border;
 
     background-color: white;
   }
 
-  .main-nav__bonus-text {
-    box-sizing: content-box;
+  .main-nav__cart {
+    justify-content: flex-end;
 
+    width: 264px;
+    padding-left: 20px;
+    margin: 0;
+  }
+
+  .main-nav__cart-text {
+    padding-left: 31px;
+  }
+
+/* бесплатная доставка ПЛАНШЕТ */
+  .main-nav__bonus-text {
     order: 2;
+
     display: block;
 
+    .general-font-family();
+    font-size: 15px;
+    line-height: 1.6;
+    color: #444444;
     text-align: right;
 
     width: 265px;
-    padding-right: calc((100% - 668px) / 2);
-    padding-top: 15px;
+    padding-top: 17px;
     padding-bottom: 15px;
     margin: 0;
 
@@ -127,46 +231,84 @@
   }
 }
 
+// ДЕСКТОП
 @media (min-width: @desktop-width) {
+  /* логотип ДЕСКТОП */
   .main-nav__logo-wrapper {
-    order: 2;
-
     width: 250px;
     padding-left: 0;
   }
 
-  // site-nav.less
-  .main-nav__site-nav {
-    order: 1;
+  .main-nav__logo {
+    margin: 0;
   }
 
-  .main-nav__search {
-    order: 2;
+  .main-nav__logo-image {
+    vertical-align: bottom;
+    width: 148px;
+    height: 73px;
+  }
+
+  // site-nav.less
+  .main-nav__site-nav {
+    display: flex;
+    order: -1;
+  }
+
+  /* корзина ДЕСКТОП */
+  .main-nav__cart-wrapper {
+    width: calc((100% - @desktop-width) / 2 + @tablet-padding + 268px);
   }
 
   .main-nav__cart {
-    order: 2;
     width: 268px;
-    padding-right: calc((100% - 1050px) / 2);
+    padding-left: 20px;
   }
 
+  .main-nav__cart-text {
+    padding-left: 35px;
+  }
+
+  /* меню акций ДЕСКТОП */
   .main-nav__promotions-menu {
     box-sizing: content-box;
 
-    order: 2;
     display: flex;
+
+    .list-style-none();
 
     width: 650px;
     padding-right: 50px;
-    padding-left: calc((100% - 1050px) / 2);
+    padding-left: calc((100vw - @desktop-width) / 2 + @desktop-padding);
     padding-top: 15px;
     padding-bottom: 15px;
 
     background-color: rgba(255, 255, 255, 0);
   }
 
+  .main-nav__promotions-item {
+    margin-right: 60px;
+  }
+
+  .main-nav__promotions-link {
+    .general-font-family-bold();
+    font-size: 15px;
+    line-height: 1.6;
+    color: black;
+
+    &:hover {
+      color: rgba(0, 0, 0, 0.6);
+    }
+
+    &:active {
+      color: rgba(0, 0, 0, 0.3);
+    }
+  }
+
+/* бесплатная доставка ДЕСКТОП */
   .main-nav__bonus-text {
+    box-sizing: content-box;
     width: 350px;
-    padding-right: calc((100% - 1050px) / 2);
+    padding-right: calc((100vw - @desktop-width) / 2 + @desktop-padding);
   }
 }
