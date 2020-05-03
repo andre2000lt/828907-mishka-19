@@ -2,7 +2,7 @@
 var site_nav = document.querySelector(".main-nav__site-nav");
 var search = document.querySelector(".main-nav__search-wrapper");
 var cart = document.querySelector(".main-nav__cart-wrapper");
-// Переключатель
+// Переключатель меню
 var toggle = document.querySelector(".main-nav__toggle");
 
 function hideMenu() {
@@ -28,5 +28,48 @@ toggle.addEventListener("click", function(evt) {
     toggle.classList.remove("main-nav__toggle--open");
     toggle.classList.add("main-nav__toggle--close");
   }
-
 });
+
+// -- ВЫБОР ОПЦИЙ ТОВАРА --
+var order_button = document.querySelector(".week-product__order-button");
+var cart_buttons = document.querySelectorAll(".product__cart-button");
+var option_menu = document.querySelector(".product-options");
+
+function showOptionWindow() {
+  option_menu.classList.remove("product-options--hidden");
+}
+
+function hideOptionWindow() {
+  option_menu.classList.add("product-options--hidden");
+}
+
+function clickToOrder(button) {
+  button.addEventListener("click", function(evt) {
+    showOptionWindow();
+  });
+}
+
+function clickToCloseOrder(button) {
+  button.addEventListener("click", function(evt) {
+
+    if(evt.target.classList.contains("product-options")) {
+      hideOptionWindow()
+    }
+  });
+}
+//index
+if(order_button) {
+  clickToOrder(order_button);
+}
+
+if(option_menu) {
+  clickToCloseOrder(option_menu);
+}
+
+
+//catalog.html
+if(cart_buttons) {
+  cart_buttons.forEach(function(cart_button){
+    clickToOrder(cart_button);
+  });
+}

@@ -20,12 +20,16 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  min-height: 80px;
   padding-left: 55px;
   padding-right: 55px;
   border-bottom: @header-border;
 
   overflow: hidden;
+}
+
+.page-footer__developer-wrapper {
+  display: flex;
+  flex-direction: column;
 }
 
 /* Разработчик подвала */
@@ -47,8 +51,24 @@
   width: 100%;
 }
 
-.page-footer__developer svg {
+.page-footer__developer-icon-svg {
   display: block;
+
+  fill: #63d1bb;
+  pointer-events: none;
+}
+
+.page-footer__developer-link:hover svg {
+  fill: #46c1ae;
+}
+
+.page-footer__developer-link:active svg {
+  fill: #46c1ae;
+  opacity: 0.3;
+}
+
+.page-footer__developer-link:active .page-footer__developer-text {
+  opacity: 0.3;
 }
 
 .page-footer__developer-text {
@@ -59,6 +79,8 @@
 
   padding-bottom: 5px;
   margin-right: 30px;
+
+  pointer-events: none;
 }
 
 /* ПЛАНШЕТ - ПОДВАЛ */
@@ -66,7 +88,6 @@
   .page-footer {
     display: flex;
     flex-direction: column;
-    margin-top: 115px; //временно
   }
 
   .page-footer__inner {
@@ -115,9 +136,6 @@
 
 /* ДЕСКТОП - ПОДВАЛ */
 @media (min-width: @desktop_width) {
-  .page-footer {
-    margin-top: 35px; //временно
-  }
 
   /* логотип подвала ПЛАНШЕТ*/
   .page-footer__logo {
@@ -125,6 +143,6 @@
   }
 
   .page-footer__socials-wrapper {
-    margin-right: 276px;
+    margin-right: 274px;
   }
 }

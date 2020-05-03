@@ -1,42 +1,84 @@
 /* -- Форма заказа-- */
 .order-form {
-  padding-bottom: 20px;
+  padding-bottom: 25px;
 }
 
+/* Набор полей */
 .order-form__fieldset {
-  padding-bottom: 30px;
+  padding-bottom: 23px;
 
   &--radio {
-    padding-top: 24px;
+    min-height: 172px;
   }
 
   &--checkbox {
-    padding-top: 20px;
+    min-height: 417px;
+    padding-bottom: 21px;
   }
 
-  &--name {
-    padding-top: 30px;
-  }
-
+  &--name,
   &--tel,
   &--email {
-    padding-top: 5px;
+    padding-bottom: 32px;
   }
 
   &--additional {
-    padding-top: 20px;
-  }
-
-  &:last-child {
-    margin-bottom: 15px;
+    padding-bottom: 15px;
   }
 }
 
+/* Легенда набора полей  */
 .order-form__legend {
+  display: flex;
+  align-items: center;
+  min-height: 16px;
+
   .general-font-family-bold();
   font-size: 17px;
   line-height: 0.94;
   color: #63d1bb;
+  text-transform: uppercase;
+
+  width: 260px;
+  margin-bottom: 33px;
+
+  &::after {
+    content: "";
+    flex-grow: 1;
+
+    height: 1px;
+    background-color: #63d1bb;
+  }
+
+  &--checkbox {
+    margin-bottom: 35px;
+  }
+
+  &--name {
+    margin-bottom: 28px;
+  }
+
+  &--tel {
+    margin-bottom: 5px;
+  }
+
+  &--email {
+    margin-bottom: 8px;
+  }
+
+  &--additional {
+    margin-bottom: 25px;
+  }
+}
+
+/* Текст легенды набора полей  */
+.order-form__legend span {
+  min-width: 62px;
+  padding-right: 10px;
+}
+
+.order-form__legend--email span {
+  min-width: 81px;
 }
 
 .order-form__radio-list,
@@ -45,45 +87,330 @@
   .list-style-none();
 }
 
+/* Пункт списка радио */
+.order-form__radio-item:not(:last-child) {
+  margin-bottom: 20px;
+}
 
+/* Пункт списка чекбоксов  */
+.order-form__checkbox-item:not(:last-child) {
+  margin-bottom: 21px;
+}
+
+/* Метка радио */
+.order-form__label--radio {
+  min-height: 40px;
+  padding-left: 62px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -7px;
+
+    width: 40px;
+    height: 40px;
+
+    border: 2px solid #444444;
+    border-radius: 50%;
+  }
+}
+
+/* Метка выбранного радио  */
+.order-form__radio-input[checked] + .order-form__label--radio {
+  &::before {
+    width: 16px;
+    height: 16px;
+    margin: 12px;
+
+    background-color: #62d1ba;
+    border: none;
+    border-radius: 50%;
+
+    box-shadow: 0 0 0 10px white,
+      0 0 0 12px #444444;
+  }
+}
+
+/* Метка чекбокса */
+.order-form__label--checkbox {
+  min-height: 40px;
+  padding-left: 62px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -10px;
+
+    width: 40px;
+    height: 40px;
+
+    border: 2px solid #444444;
+  }
+}
+
+/* Метка выбранного чекбокса  */
+.order-form__checkbox-input[checked] + .order-form__label--checkbox {
+  &::before {
+    background-image: url("../img/icon-tick.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 22px 16px;
+  }
+}
+
+/* Наведкние на метку радио / чекбокса  */
+.order-form__label--radio:hover::before,
+.order-form__label--checkbox:hover::before {
+  border-color: #62d1ba;
+}
+
+.order-form__radio-input[checked] + .order-form__label--radio:hover::before {
+  box-shadow: 0 0 0 10px white,
+    0 0 0 12px #62d1ba;
+}
+
+/* Нажатие на метку радио / чекбокса  */
+.order-form__label--radio:active::before,
+.order-form__label--checkbox:active::before {
+  border-color: rgba(68, 68, 68, 0.3);
+}
+
+.order-form__radio-input[checked] + .order-form__label--radio:active::before {
+  box-shadow: 0 0 0 10px white,
+    0 0 0 12px rgba(68, 68, 68, 0.3);
+}
+
+/* Метка поля  */
 .order-form__label {
+  position: relative;
+
+  display: block;
+
   .general-font-family-bold();
   font-size: 17px;
   line-height: 1.06;
   color: black;
 }
 
-.order-form__input-text {
-  width: 260px;
+/* Поле ввода текста  */
+.order-form__input-text-item {
+  &:not(:last-child) {
+    margin-bottom: 22px;
+  }
 }
 
-.order-form__textarea {
+.order-form__input-text {
   width: 260px;
+  height: 52px;
+  padding-right: 20px;
+  border: none;
+  border-bottom: 2px solid black;
+
+  background-color: transparent;
+
+  font-size: 17px;
+  line-height: 1.06;
+
+  outline: none;
+
+  &::placeholder {
+    font-size: 17px;
+    line-height: 1.06;
+    color: rgba(68, 68, 68, 0.3);
+  }
+
+  &:hover {
+    border-bottom-color: #62d1ba;
+  }
+
+  &--email {
+    padding-right: 40px;
+  }
+}
+
+/* Поле ввода телефона  */
+.order-form__input-text--tel {
+  padding-right: 40px;
+
+  font-size: 19px;
+  line-height: 0.95;
+
+  &::placeholder {
+    font-size: 19px;
+    line-height: 0.95;
+    color: rgba(68, 68, 68, 0.3);
+  }
+}
+
+/* Обертка ввода телефона  */
+.order-form__input-phone-wrapper {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: 8px;
+
+    width: 25px;
+    height: 24px;
+
+    background: url("../img/icon-phone.svg") no-repeat;
+    opacity: 0.2;
+  }
+
+  &:hover,
+  &:active {
+    &::after {
+      background-image: url("../img/green-phone.svg");
+      opacity: 1;
+    }
+  }
+}
+
+/* Обертка ввода email'а  */
+.order-form__input-email-wrapper {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: 5px;
+
+    width: 32px;
+    height: 32px;
+
+    background: url("../img/icon-mail.svg") no-repeat;
+    opacity: 0.2;
+  }
+
+  &:hover,
+  &:active {
+    &::after {
+      background-image: url("../img/green-mail.svg");
+
+      opacity: 1;
+    }
+  }
+}
+
+/* Taxtarea  */
+.order-form__textarea {
+  display: block;
+
+  width: 260px;
+  height: 143px;
+  padding-top: 15px;
+  padding-right: 25px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  border: solid 2px #444444;
+
+  font-size: 17px;
+  line-height: 1.06;
+
+  outline: none;
+  resize: none;
+
+  &::placeholder {
+    font-size: 17px;
+    line-height: 1.06;
+    color: rgba(68, 68, 68, 0.3);
+  }
+
+  &:hover,
+  &:active {
+    border-color: #62d1ba;
+  }
 }
 
 .order-form__bottom-wrapper {
   margin-bottom: 28px;
 }
 
+/* Примечание к форме  */
 .order-form__info-text {
+  font-size: 14px;
+  line-height: 1.14;
+
   margin: 0;
+  margin-bottom: 33px;
 }
 
+.order-form__info-text sup {
+  font-size: 16px;
+  top: 0;
+}
+
+/* кнопка сабмит формы  */
 .order-form__submit {
+  font-size: 17px;
+  line-height: 0.94;
+
   width: 260px;
 }
 
-// ПЛАНШЕТ
+/* ПЛАНШЕТ - Форма заказа */
 @media (min-width: @tablet_width) {
   .order-form {
-    padding-bottom: 50px;
+    padding-bottom: 43px;
   }
 
+  /* Легенда набора полей ПЛАНШЕТ */
   .order-form__legend {
     display: block;
 
     width: 168px;
     padding-right: 15px;
+    margin: 0;
+
+    &::after {
+      display: none;
+    }
+
+    &--name,
+    &--tel,
+    &--email,
+    &--additional {
+      padding-top: 18px;
+    }
+  }
+
+  /* Набор полей ПЛАНШЕТ*/
+  .order-form__fieldset {
+    min-height: 100px;
+
+    &--radio {
+      padding-bottom: 35px;
+    }
+
+    &--checkbox {
+      padding-top: 67px;
+      padding-bottom: 34px;
+    }
+
+    &--name {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    &--tel {
+      padding-top: 52px;
+      padding-bottom: 0;
+    }
+
+    &--email {
+      padding-top: 23px;
+      padding-bottom: 50px;
+    }
+
+    &--additional {
+      padding-top: 51px;
+      padding-bottom: 43px;
+    }
   }
 
   .order-form__fieldset--checkbox,
@@ -104,62 +431,206 @@
     width: 500px;
   }
 
+  /* Пункт списка чекбоксов ПЛАНШЕТ */
+
   .order-form__checkbox-item {
     width: 238px;
 
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+
+    &:last-child,
+    &:nth-last-child(2) {
+      margin-bottom: 0;
+    }
+
     &:nth-child(odd) {
-      margin-right: 15px;
+      margin-right: 23px;
     }
   }
 
+  /* Пункт списка радио ПЛАНШЕТ */
+  .order-form__radio-item:not(:last-child) {
+    margin-bottom: 22px;
+  }
+
+  /* Метка ПЛАНШЕТ */
+  .order-form__label {
+    font-size: 19px;
+    line-height: 0.95;
+
+    &--name {
+      min-height: 52px;
+      padding-top: 17px;
+    }
+  }
+
+
+  /* Метка радио ПЛАНШЕТ */
+  .order-form__label--radio {
+    min-height: 52px;
+    padding-left: 80px;
+
+    &::before {
+      top: -14px;
+
+      width: 52px;
+      height: 52px;
+    }
+  }
+
+  /* Метка выбранного радио ПЛАНШЕТ */
+  .order-form__radio-input[checked] + .order-form__label--radio {
+    &::before {
+      width: 22px;
+      height: 22px;
+      margin: 15px;
+
+      box-shadow: 0 0 0 13px white,
+        0 0 0 15px #444444;
+    }
+  }
+
+
+  /* Метка чекбокса ПЛАНШЕТ*/
+  .order-form__label--checkbox {
+    min-height: 52px;
+    padding-left: 80px;
+
+    &::before {
+      top: -16px;
+
+      width: 54px;
+      height: 52px;
+    }
+  }
+
+  /* Метка выбранного чекбокса ПЛАНШЕТ */
+  .order-form__checkbox-input[checked] + .order-form__label--checkbox {
+    &::before {
+      background-size: 33px 22px;
+    }
+  }
+
+  /* список полей ввода ПЛАНШЕТ */
   .order-form__input-list {
     width: 500px;
   }
 
+  /* поля ввода текста ПЛАНШЕТ */
   .order-form__input-text-item {
     display: flex;
+
+    &:not(:last-child) {
+      margin-bottom: 23px;
+    }
   }
 
+  /* Метки полей ввода ПЛАНШЕТ */
   .order-form__input-text-item .order-form__label {
     max-width: 150px;
     margin-right: 25px;
   }
 
-  .order-form__input-text {
-    flex-grow: 1;
+  /* Обертка ввода телефона / email ПЛАНШЕТ */
+  .order-form__input-phone-wrapper,
+  .order-form__input-email-wrapper {
+    &::after {
+      right: 24px;
+    }
   }
 
+  /* Поля ввода текста ПЛАНШЕТ */
+  .order-form__input-text {
+    font-size: 19px;
+    line-height: 0.95;
+
+    &::placeholder {
+      font-size: 19px;
+      line-height: 0.95;
+    }
+
+    &--name {
+      flex-grow: 1;
+
+      padding-left: 16px;
+    }
+
+    &--tel,
+    &--email {
+      width: 500px;
+      padding-left: 16px;
+    }
+  }
+
+  /* Taxtarea ПЛАНШЕТ */
   .order-form__textarea {
     width: 500px;
     height: 140px;
+
+    font-size: 19px;
+    line-height: 0.95;
+
+    &::placeholder {
+      font-size: 19px;
+      line-height: 0.95;
+      color: rgba(68, 68, 68, 0.3);
+    }
   }
 
   .order-form__bottom-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 0;
   }
 
-  .order-form__submit {
-    width: 230px;
-  }
-
+  /* Примечание к форме ПЛАНШЕТ */
   .order-form__info-text {
+    order: 11;
+
     font-size: 17px;
     line-height: 1.76;
+    margin: 0;
+  }
+
+  /* Кнопка Submit ПЛАНШЕТ */
+  .order-form__submit {
+    order: 10;
+
+    width: 230px;
   }
 }
 
 // ДЕСКТОП
 @media (min-width: @desktop_width) {
+  .order-form__fieldset {
+    &--radio {
+      padding-bottom: 33px;
+    }
+
+    &--additional {
+      padding-bottom: 38px;
+    }
+  }
+
   .order-form__legend {
+    padding-right: 0;
+    padding-left: 62px;
     width: 175px;
-    padding-right: 15px;
-    text-align: center;
+  }
+
+  .order-form__legend span {
+    padding-right: 20px;
+    padding-left: 0;
   }
 
   .order-form__checkbox-list {
-    width: 750px;
+    width: 770px;
   }
 
   .order-form__checkbox-item {
@@ -168,7 +639,11 @@
     }
 
     &:not(:nth-child(3n)) {
-      margin-right: 15px;
+      margin-right: 25px;
+    }
+
+    &:nth-last-child(-n + 3) {
+      margin-bottom: 0;
     }
   }
 
@@ -176,7 +651,14 @@
     width: 700px;
   }
 
-  .order-form__input-text--phone,
+  .order-form__input-phone-wrapper,
+  .order-form__input-email-wrapper {
+    &::after {
+      right: 5px;
+    }
+  }
+
+  .order-form__input-text--tel,
   .order-form__input-text--email,
   .order-form__textarea {
     flex-grow: 0;
@@ -184,6 +666,10 @@
   }
 
   .order-form__bottom-wrapper {
-    width: 800px;
+    box-sizing: content-box;
+
+    width: 700px;
+    padding-left: calc((100vw - @desktop_width) / 2 + 225px);
+    margin: 0;
   }
 }

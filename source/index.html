@@ -177,7 +177,7 @@
           <p class="week-product__price">
             Цена: 990 руб.
           </p>
-          <a class="week-product__order-button standart-button" href="">Заказать</a>
+          <a class="week-product__order-button standart-button">Заказать</a>
         </div>
       </div>
     </section>
@@ -220,7 +220,7 @@
           <p class="reviews__text">
             Я молодая мама, но всё равно фотографии не набирали и близко такого
             количества лайков, как у популярных инстамамочек. В отчаянии, я накупила
-            аксессуаров и игрушек в Мишке, и мои фотографии сразу стали более
+            аксессуаров и игрушек в Мишке, <span class="nowr"> и мои </span> фотографии сразу стали более
             стильными, а также набирают больше лайков!
           </p>
           <div class="reviews__item-bottom-wrapper">
@@ -230,8 +230,16 @@
             </cite>
 
             <div class="reviews__nav">
-              <button class="reviews__button reviews__button--prev">Назад</button>
-              <button class="reviews__button reviews__button--next">Вперед</button>
+              <button class="reviews__button reviews__button--prev">
+                <svg class="reviews__left-arrow-svg" width="50px" height="26.003px" aria-label="Стрелка влево">
+                  <use href="img/sprite.svg#left-arrow" />
+                </svg>
+              </button>
+              <button class="reviews__button reviews__button--next">
+                <svg class="reviews__right-arrow-svg" width="50px" height="26.003px" aria-label="Стрелка вправо">
+                  <use href="img/sprite.svg#right-arrow" />
+                </svg>
+              </button>
             </div>
           </div>
         </blockquote>
@@ -259,11 +267,10 @@
             </p>
           </div>
         </div>
-
       </div> <!-- / .container -->
       <!-- Карта -->
       <div class="contacts__map map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d3997.198215284125!2d30.318705929036398!3d59.93879412750483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e0!4m0!4m5!1s0x4696310fca5ba729%3A0xea9c53d4493c879f!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LCDQodCw0L3QutGCLdCf0LXRgtC10YDQsdGD0YDQsywgMTkxMTg2!3m2!1d59.9387942!2d30.323083299999997!5e0!3m2!1sru!2sru!4v1585734097384!5m2!1sru!2sru" width="100%" height="457" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        <iframe  class="contacts__map-iframe" src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d3997.198215284125!2d30.318705929036398!3d59.93879412750483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e0!4m0!4m5!1s0x4696310fca5ba729%3A0xea9c53d4493c879f!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LCDQodCw0L3QutGCLdCf0LXRgtC10YDQsdGD0YDQsywgMTkxMTg2!3m2!1d59.9387942!2d30.323083299999997!5e0!3m2!1sru!2sru!4v1585734097384!5m2!1sru!2sru" width="100%" height="457" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
       </div>
 
       <div class="contacts__bottom-wrapper container">
@@ -271,6 +278,37 @@
       </div>
     </section>
   </main>
+
+  <!-- ВЫБОР ОПЦИЙ ТОВАРА -->
+  <div class="product__options product-options product-options--hidden">
+    <div class="product-options__inner">
+      <div class="product-options__content">
+        <p class="product-options__big-text">Добавить в корзину</p>
+        <p class="product-options__small-text">Выберите размер:</p>
+        <div class="product__list-wrapper">
+          <ul class="product-options__list">
+            <li>
+              <button class="product-options__option product-options__option--current">
+                s
+              </button>
+            </li>
+            <li>
+              <button class="product-options__option">
+                m
+              </button>
+            </li>
+            <li>
+              <button class="product-options__option">
+                l
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <a class="product-options__order-button green-button" href="">Добавить</a>
+      </div>
+    </div>
+  </div>
 
   <!-- ПОДВАЛ  -->
   <footer class="page-footer">
