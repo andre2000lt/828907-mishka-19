@@ -13,13 +13,13 @@
     background-repeat: no-repeat;
     background-position:  50% 0;
     /* Mobile layout by default */
-    background-image: url( "img/models/mishka-catalog-mobile.png" );
+    background-image: url( "img/models/mishka-catalog-mobile-popup.png" );
   }
   /* Tablet */
   @media ( min-width: 768px ) {
     HTML {
       /* Tablet layout */
-      background-image: url( "img/models/mishka-catalog-tablet.png" );
+      background-image: url( "img/models/mishka-catalog-tablet-popup.png" );
     }
   }
   /* Desktop */
@@ -131,23 +131,12 @@
 
               <div class="product__cart-wrapper">
                 <span class="product__price">1 200 руб.</span>
-                <a href="" class="product__cart-button">
+                <a class="product__cart-button">
                   <svg class="product__cart-icon-svg" width="20.294px" height="18.849px" aria-label="Иконка корзины">
                     <use href="img/sprite.svg#cart-icon" />
                   </svg>
                 </a>
               </div>
-            </div>
-
-            <div class="product__options product-options">
-              <p class="product-options__big-text">Добавить в корзину</p>
-              <p class="product-options__small-text">Выберите размер:</p>
-              <ul class="product-options__list">
-                <li class="product-options__option">S</li>
-                <li class="product-options__option">M</li>
-                <li class="product-options__option">L</li>
-              </ul>
-              <a class="product-options__order-button" href="">Добавить</a>
             </div>
           </li>
 
@@ -171,23 +160,12 @@
 
               <div class="product__cart-wrapper">
                 <span class="product__price">690 руб.</span>
-                <a href="" class="product__cart-button">
+                <a class="product__cart-button">
                   <svg class="product__cart-icon-svg" width="20.294px" height="18.849px" aria-label="Иконка корзины">
                     <use href="img/sprite.svg#cart-icon" />
                   </svg>
                 </a>
               </div>
-            </div>
-
-            <div class="product__options product-options">
-              <p class="product-options__big-text">Добавить в корзину</p>
-              <p class="product-options__small-text">Выберите размер:</p>
-              <ul class="product-options__list">
-                <li class="product-options__option">S</li>
-                <li class="product-options__option">M</li>
-                <li class="product-options__option">L</li>
-              </ul>
-              <a class="product-options__order-button" href="">Добавить</a>
             </div>
           </li>
 
@@ -211,23 +189,12 @@
 
               <div class="product__cart-wrapper">
                 <span class="product__price">1 500 руб.</span>
-                <a href="" class="product__cart-button">
+                <a class="product__cart-button">
                   <svg class="product__cart-icon-svg" width="20.294px" height="18.849px" aria-label="Иконка корзины">
                     <use href="img/sprite.svg#cart-icon" />
                   </svg>
                 </a>
               </div>
-            </div>
-
-            <div class="product__options product-options">
-              <p class="product-options__big-text">Добавить в корзину</p>
-              <p class="product-options__small-text">Выберите размер:</p>
-              <ul class="product-options__list">
-                <li class="product-options__option">S</li>
-                <li class="product-options__option">M</li>
-                <li class="product-options__option">L</li>
-              </ul>
-              <a class="product-options__order-button" href="">Добавить</a>
             </div>
           </li>
         </ul>
@@ -240,7 +207,18 @@
 
         <h2 class="video-content__title">Процесс производства</h2>
 
-        <img class="video-content__image" src="https://via.placeholder.com/260x150" alt="Корзинка" width="260" height="150">
+        <div class="video-content__image-wrapper">
+          <picture>
+            <source srcset="img/video-desktop@1x.jpg" media="(min-width: 1150px)">
+            <source srcset="img/video-tablet@1x.jpg" media="(min-width: 768px)">
+            <img class="video-content__image" src="img/video-mobile@1x.jpg" alt="Корзинка">
+          </picture>
+
+          <a class="video-content__play-button" href="">
+            <span class="visually-hidden">Воспроизвести видео</span>
+          </a>
+        </div>
+
         <p class="video-content__description">
           По просьбам наших любимых фолловеров мы сняли для вас подробное видео
           о том, как появляются наши товары.
@@ -250,6 +228,37 @@
       </div>
     </article>
   </main>
+
+  <!-- ВЫБОР ОПЦИЙ ТОВАРА -->
+  <div class="product__options product-options product-options--hidden">
+    <div class="product-options__inner">
+      <div class="product-options__content">
+        <p class="product-options__big-text">Добавить в корзину</p>
+        <p class="product-options__small-text">Выберите размер:</p>
+        <div class="product__list-wrapper">
+          <ul class="product-options__list">
+            <li>
+              <button class="product-options__option product-options__option--current">
+                s
+              </button>
+            </li>
+            <li>
+              <button class="product-options__option">
+                m
+              </button>
+            </li>
+            <li>
+              <button class="product-options__option">
+                l
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <a class="product-options__order-button green-button" href="">Добавить</a>
+      </div>
+    </div>
+  </div>
 
   <!-- ПОДВАЛ  -->
   <footer class="page-footer">

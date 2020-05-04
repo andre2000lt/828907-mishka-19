@@ -1,0 +1,162 @@
+/* -- ВЫБОР ОПЦИЙ ТОВАРА -- */
+.product-options {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-color: rgba(255, 255, 255, 0.9);
+
+  &--hidden {
+    display: none;
+  }
+}
+
+.product-options__inner {
+  z-index: 11;
+  width: 100vw;
+  box-shadow: 0 5px 10px 0 rgba(0, 1, 1, 0.25);
+  border-top: solid 1px #c6c6c6;
+  border-bottom: solid 1px #c6c6c6;
+
+  background-color: white;
+}
+
+.product-options__content {
+  width: 260px;
+  min-height: 324px;
+  padding-top: 29px;
+  padding-bottom: 48px;
+  margin: 0 auto;
+}
+
+/* Заголовок опций товара */
+.product-options__big-text {
+  .general-font-family-bold();
+  font-size: 25px;
+  line-height: 1.2;
+  color: black;
+  text-transform: uppercase;
+
+  width: 150px;
+  margin: 0;
+  margin-left: 59px;
+  margin-bottom: 10px;
+}
+
+/* Подзаголовок опций товара */
+.product-options__small-text {
+  width: 260px;
+  margin: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 23px;
+  text-align: center;
+}
+
+/* Обртка списка опций товара */
+.product__list-wrapper {
+  width: 260px;
+  margin-bottom: 30px;
+
+  overflow: hidden;
+}
+
+/* Список опций товара */
+.product-options__list {
+  .list-style-none();
+
+  display: flex;
+  flex-wrap: wrap;
+  width: 267px;
+  margin: 0;
+  padding: 0;
+}
+
+/* опция товара */
+.product-options__option {
+  display: block;
+
+  .general-font-family-bold();
+  font-size: 17px;
+  line-height: 0.94;
+  text-transform: uppercase;
+
+  width: 82px;
+  height: 52px;
+  margin-right: 7px;
+  border: solid 2px rgba(68, 68, 68, 0.1);
+
+  background-color: rgba(255, 255, 255, 0.1);
+
+  &:hover {
+    border: solid 2px rgba(68, 68, 68, 0.3);
+  }
+
+  &--current,
+  &:active {
+    border: solid 2px #63d1bb;
+    outline: none;
+  }
+}
+
+/* ПЛАНШЕТ - ВЫБОР ОПЦИЙ ТОВАРА */
+@media (min-width: @tablet_width) {
+  .product-options__inner {
+    width: 566px;
+    border: #c6c6c6;
+  }
+
+  .product-options__content {
+    width: 350px;
+    padding-top: 30px;
+    padding-bottom: 46px;
+    margin: 0 auto;
+  }
+
+  /* Заголовок опций товара ПЛАНШЕТ*/
+  .product-options__big-text {
+    font-size: 30px;
+    line-height: 1.9;
+
+    width: 354px;
+    margin: 0;
+    margin-bottom: 13px;
+  }
+
+  /* Подзаголовок опций товара ПЛАНШЕТ*/
+  .product-options__small-text {
+    font-size: 17px;
+    line-height: 1.76;
+
+    width: 350px;
+    margin-bottom: 20px;
+  }
+
+  /* Обртка списка опций товара ПЛАНШЕТ*/
+  .product__list-wrapper {
+    width: 350px;
+    margin-bottom: 33px;
+  }
+
+  /* Список опций товара ПЛАНШЕТ*/
+  .product-options__list {
+    width: 357px;
+  }
+
+  /* опция товара ПЛАНШЕТ*/
+  .product-options__option {
+    width: 112px;
+  }
+
+  .product-options__order-button {
+    width: 350px;
+  }
+}

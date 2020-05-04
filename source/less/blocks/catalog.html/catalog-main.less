@@ -1,9 +1,8 @@
 /* -- КАТАЛОГ -- */
 .catalog-main {
-  padding-bottom: 28px;
-  margin-bottom: 30px;
-}
 
+  padding-bottom: 58px;
+}
 /* -- загаловок каталога  -- */
 .catalog-main__page-title {
   .general-font-family-bold();
@@ -26,6 +25,10 @@
 
 // ПЛАНШЕТ
 @media (min-width: @tablet_width) {
+  .catalog-main {
+    padding-bottom: 0;
+  }
+
   .catalog-main__page-title {
     .section-title-tablet();
 

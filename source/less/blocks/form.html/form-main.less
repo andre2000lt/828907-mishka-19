@@ -6,9 +6,9 @@
   color: black;
   text-align: center;
 
-  padding: 70px 0;
+  min-height: 177px;
+  padding: 70px 0 77px;
   margin: 0;
-  margin-bottom: 25px;
 
   background-color: #f1f1f1;
 }
@@ -19,18 +19,42 @@
   line-height: 1.85;
   color: #444444;
 
-  margin-bottom: 25px;
+  padding-top: 22px;
+  padding-bottom: 25px;
 }
 
 // ПЛАНШЕТ
 @media (min-width: @tablet_width) {
   .form-main__page-title {
     .section-title-tablet();
+
+    min-height: 162px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .form-main__welсome-message-wrapper {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      width: 100%;
+      top: -23px;
+      left: 0;
+      content: "";
+
+      height: 24px;
+      background-image: url("../img/zigzag-fill-tablet.svg");
+      background-repeat: repeat-x;
+    }
   }
 
   .form-main__welсome-message {
     font-size: 17px;
     line-height: 1.76;
+
+    padding-top: 60px;
+    padding-bottom: 75px;
   }
 }
 
@@ -38,5 +62,32 @@
 @media (min-width: @desktop_width) {
   .form-main__page-title {
     .section-title-desktop();
+
+    min-height: 200px;
+    padding-top: 33px;
+  }
+
+  .form-main__welсome-message-wrapper {
+    min-height: 250px;
+
+    &::before {
+      position: absolute;
+      width: 100%;
+      top: -24px;
+      left: 0;
+      content: "";
+
+      background-image: url("../img/zigzag-fill-desktop-catalog.svg");
+      background-position: 0 top;
+      background-repeat: repeat-x;
+    }
+  }
+
+  .form-main__welсome-message {
+    box-sizing: content-box;
+    width: 680px;
+    padding-top: 115px;
+    padding-left: calc((100vw - @desktop_width) / 2 + 225px);
+    margin: 0;
   }
 }

@@ -2,10 +2,24 @@
 .contacts {
   position: relative;
 
-  padding-top: 38px;
-  padding-bottom: 35px;
+  padding-top: 41px;
+  padding-bottom: 38px;
+
+  &::before {
+    position: absolute;
+    width: 100%;
+    height: 6px;
+    top: 0;
+    left: 0;
+    content: "";
+
+    background-image: url("../img/bg-zigzag-line.svg");
+    background-position: -8px top;
+    background-repeat: repeat-x;
+  }
 }
 
+/*  заголовок контактов  */
 .contacts__title {
   .general-font-family-bold();
   font-size: 18px;
@@ -13,9 +27,10 @@
   color: black;
 
   margin: 0;
-  margin-bottom: 28px;
+  margin-bottom: 25px;
 }
 
+/*  email / адрес контактов  */
 .contacts__email-label,
 .contacts__address-label {
   margin-right: 30px;
@@ -31,66 +46,228 @@
 
 .contacts__email-wrapper {
   display: flex;
-  margin-bottom: 45px;
+  margin-bottom: 30px;
 }
 
 .contacts__address-wrapper {
   display: flex;
-  margin-bottom: 35px;
+  margin-bottom: 37px;
 }
 
+/*  адрес контактов  */
 .contacts__address {
   width: 166px;
   margin: 0;
 }
 
-.contacts__map {
-  margin-bottom: 39px;
+/*  email контактов  */
+.contacts__email {
+  border-bottom: 1px solid #62d1ba;
+
+  &:hover {
+    color: #46c1ae;
+  }
+
+  &:active {
+    color: rgba(70, 193, 174, 0.3);
+  }
 }
 
-// ПЛАНШЕТ
+/*  карта контактов  */
+.contacts__map {
+  position: relative;
+
+  min-height: 457px;
+  margin-bottom: 30px;
+
+  background-image: url("../img/map-mobile@1x.jpg");
+  background-position: center top;
+  background-repeat: no-repeat;
+
+  &::before {
+    position: absolute;
+    z-index: 2;
+    content: "";
+    top: 143px;
+    left: calc((100% - @mobile_width) / 2 + 138px);
+
+    width: 67px;
+    height: 100px;
+
+    background-image: url("../img/map-pin.svg");
+    background-repeat: no-repeat;
+  }
+}
+
+.contacts__map-iframe {
+  position: relative;
+  z-index: 3;
+}
+
+/*  кнопка контактов  */
+.contacts__write-us-button {
+  font-size: 18px;
+  line-height: 1.11;
+
+  width: 260px;
+  margin: 0 auto;
+}
+
+/* -- ПЛАНШЕТ - КОНТАКТЫ -- */
 @media (min-width: @tablet_width) {
+  .contacts {
+    padding-top: 78px;
+    padding-bottom: 58px;
+
+    &::before {
+      position: absolute;
+      width: 100%;
+      height: 15.36px;
+      top: 0;
+      left: 0;
+      content: "";
+
+      background-image: url("../img/bg-zigzag-line-tablet.svg");
+      background-position: -20px top;
+      background-repeat: repeat-x;
+    }
+  }
+
+  .contacts__inner {
+    position: relative;
+
+    margin-bottom: 19px;
+
+    &::after {
+      z-index: 2;
+      position: absolute;
+      width: 47px;
+      height: 82px;
+      top: -15px;
+      right: 53px;
+      content: "";
+
+      background-image: url("../img/icon-flag.svg");
+      background-repeat: no-repeat;
+    }
+  }
+
+  /*  заголовок контактов  ПЛАНШЕТ*/
   .contacts__title {
     .section-title-tablet();
+
+    margin-left: -5px;
+    margin-bottom: 49px;
   }
 
   .contacts__middle-wrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    min-height: 127px;
+  }
+
+  /*  email / адрес контактов  ПЛАНШЕТ */
+  .contacts__email-wrapper {
+    margin-right: 53px;
+  }
+
+  .contacts__email-label,
+  .contacts__address-label {
+    font-size: 17px;
+    line-height: 1.76;
+
+    margin-right: 24px;
+  }
+
+  .contacts__email,
+  .contacts__address {
+    font-size: 17px;
+    line-height: 1.76;
   }
 
   .contacts__address {
-    width: 220px;
+    width: 230px;
   }
 
-  .contacts__bottom-wrapper {
-    display: flex;
-    justify-content: center;
+  /*  карта контактов  ПЛАНШЕТ*/
+  .contacts__map {
+
+    min-height: 457px;
+    margin-bottom: 45px;
+
+    background-image: url("../img/map-tablet@1x.jpg");
+    background-position: center top;
+    background-repeat: no-repeat;
+
+    &::before {
+      top: 138px;
+      left: calc((100% - @tablet_width) / 2 + 363px);
+    }
+  }
+
+  /*  кнопка контактов  ПЛАНШЕТ*/
+
+  .contacts__write-us-button {
+    display: block;
+
+    font-size: 17px;
+    line-height: 1.18;
+
+    width: 230px;
+    margin: 0 auto;
   }
 }
 
-// ДЕСКТОП
+/* -- ДЕСКТОП - КОНТАКТЫ -- */
 @media (min-width: @desktop_width) {
   .contacts {
     display: flex;
     flex-direction: column;
 
-    min-height: 630px;
-    padding-top: 70px;
+    padding-top: 90px;
     padding-bottom: 105px;
-  }
 
-  .contacts__title {
-    .section-title-desktop();
+    &::before {
+      display: none;
+    }
   }
 
   .contacts__inner {
     box-sizing: content-box;
 
     width: 300px;
+    min-height: 294px;
     margin: 0;
+    margin-bottom: 42px;
     padding-top: 70px;
-    padding-left: calc((100% - 1150px) / 2 + 225px);
+    padding-left: calc((100vw - @desktop_width) / 2 + 225px);
+
+    &::before {
+      z-index: 10;
+      position: absolute;
+      width: 1050px;
+      height: 50px;
+      top: -90px;
+      left: calc((100vw - @desktop_width) / 2 + @desktop_padding);
+      content: "";
+
+      background-image: url("../img/bg-zigzag-line-desktop.svg");
+      background-position: -25px top;
+      background-repeat: repeat-x;
+    }
+
+    &::after {
+      top: 63px;
+      left: calc((100vw - @desktop_width) / 2 + 112px);
+      right: auto;
+    }
+  }
+
+  /* заголовок контактов  ДЕСКТОП*/
+  .contacts__title {
+    .section-title-desktop();
   }
 
   .contacts__middle-wrapper {
@@ -101,27 +278,43 @@
     width: 300px;
   }
 
-  .contacts__bottom-wrapper {
-    box-sizing: content-box;
-    justify-content: flex-start;
-
-    width: 300px;
-    margin: 0;
-    padding-left: calc((100% - 1150px) / 2 + 225px);
-    padding-right: 50px;
-    margin-top: auto;
+  /*  email / адрес контактов  ДЕСКТОП */
+  .contacts__email-wrapper {
+    margin-right: 0;
   }
 
+  /*  карта контактов  ДЕСКТОП*/
   .contacts__map {
     box-sizing: content-box;
 
     position: absolute;
-    right: calc((100% - 1050px) / 2);
-    top: 70px;
+    right: calc((100vw - @desktop_width) / 2 + @desktop_padding);
+    top: 90px;
 
     width: 525px;
     height: 457px;
 
-    background-color: black;
+    background-image: url("../img/map-desktop@1x.jpg");
+
+    &::before {
+      top: 143px;
+      left: calc(238px);
+    }
+  }
+
+  /*  кнопка контактов  ДЕСКТОП */
+  .contacts__bottom-wrapper {
+    box-sizing: content-box;
+    display: flex;
+    justify-content: flex-start;
+
+    width: 300px;
+    margin: 0;
+    padding-left: calc((100vw - @desktop_width) / 2 + 225px);
+    padding-right: 50px;
+  }
+
+  .contacts__write-us-button {
+    margin: 0;
   }
 }

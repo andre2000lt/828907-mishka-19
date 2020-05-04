@@ -1,17 +1,20 @@
-/* -- Отзывы -- */
+/* -- ОТЗЫВЫ -- */
 .reviews {
   padding-bottom: 45px;
 }
 
+/* заголовок отзывов */
 .reviews__title {
   .section-title-mobile();
-  margin-bottom: 28px;
+  margin-bottom: 23px;
 }
 
+/* отзыв */
 .reviews__item {
   margin: 0;
 }
 
+/* текст отзыва */
 .reviews__text {
   .general-font-family();
   font-size: 15px;
@@ -19,14 +22,16 @@
   color: #444444;
 
   margin: 0;
-  margin-bottom: 30px;
+  margin-bottom: 27px;
 }
 
+/* автор отзыва */
 .reviews__author {
   display: block;
   margin-bottom: 30px;
 }
 
+/* имя автора отзыва */
 .reviews__author-name {
   display: block;
 
@@ -35,8 +40,12 @@
   line-height: 1.41;
   font-style: normal;
   color: black;
+
+  min-height: 24px;
+  margin-bottom: 3px;
 }
 
+/* ник автора отзыва */
 .reviews__author-nickname {
   display: block;
 
@@ -45,88 +54,171 @@
   line-height: 1.76;
   font-style: normal;
   color: #444444;
+
+  min-height: 30px;
 }
 
+/* навигация отзывов */
 .reviews__nav {
+  display: flex;
+
   padding-top: 1px;
-  margin-bottom: 38px;
+  margin-bottom: 36px;
 }
 
+/* кнопка след / пред отзыва */
 .reviews__button {
-  width: 48%;
+  width: 130px;
+  min-height: 52px;
+  padding: 0;
+  border: @header-border;
+  background-color: transparent;
 }
 
-// ПЛАНШЕТ
+.reviews__button:hover svg {
+  opacity: 0.6;
+}
+
+.reviews__button:active svg {
+  opacity: 0.3;
+}
+
+
+/* кнопка отправки отзыва */
+.reviews__write-button {
+  font-size: 18px;
+  line-height: 1.11;
+
+  width: 260px;
+}
+
+/* -- ПЛАНШЕТ - ОТЗЫВЫ -- */
 @media (min-width: @tablet_width) {
   .reviews {
     background-image: url("../img/review@1x.jpg");
     background-repeat: no-repeat;
 
-    padding-bottom: 65px;
+    padding-bottom: 70px;
   }
 
   .reviews__inner {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
+    align-content: flex-start;
 
     min-height: 457px;
-    padding-top: 80px;
+    padding-top: 77px;
   }
 
+  /* заголовок отзывов ПЛАНШЕТ */
   .reviews__title {
     .section-title-tablet();
 
     width: 380px;
+    min-height: 50px;
+    margin-left: -4px;
+    margin-bottom: 51px;
   }
 
+  /* отзыв ПЛАНШЕТ */
   .reviews__item {
     order: 2;
-
     width: 100%;
   }
 
+  /* текст отзыва ПЛАНШЕТ */
   .reviews__text {
     font-size: 17px;
     line-height: 1.76;
 
-    padding-bottom: 60px;
+    min-height: 120px;
+    margin-bottom: 57px;
   }
 
+  /* нижняя обертка отзыва ПЛАНШЕТ */
   .reviews__item-bottom-wrapper {
     display: flex;
     justify-content: space-between;
   }
 
+  /* автор отзыва ПЛАНШЕТ */
   .reviews__author {
     width: 400px;
   }
 
+  /* имя автора отзыва ПЛАНШЕТ */
   .reviews__author-name {
     font-size: 18px;
     line-height: 1.33;
   }
 
+  /* ник автора отзыва ПЛАНШЕТ */
   .reviews__nav {
-    width: 140px;
+    width: 172px;
+    padding-right: 2px;
   }
 
+  /* кнопка след / пред отзыва ПЛАНШЕТ */
+  .reviews__button {
+    width: 85px;
+    border: none;
+  }
+
+  /* кнопка отправки отзыва ПЛАНШЕТ */
   .reviews__write-button {
+    font-size: 17px;
+    line-height: 1.18;
+
+    width: 175px;
+    margin-top: 3px;
     margin-left: auto;
   }
 }
 
-// ДЕСКТОП
+/* -- ДЕСКТОП - ОТЗЫВЫ -- */
 @media (min-width: @desktop_width) {
   .reviews {
+    padding-top: 8px;
     background-image: none;
   }
 
   .reviews__inner {
+    padding-top: 70px;
     padding-left: 225px;
 
     background-image: url("../img/review@1x.jpg");
     background-repeat: no-repeat;
     background-position: 50px 0;
+  }
+
+  /* заголовок отзывов ДЕСКТОП */
+  .reviews__title {
+    .section-title-desktop();
+
+    width: 500px;
+    margin-bottom: 48px;
+  }
+
+  /* текст отзыва ДЕСКТОП */
+  .reviews__text {
+    width: 770px;
+    margin-bottom: 10px;
+  }
+
+  /* имя автора отзыва ДЕСКТОП */
+  .reviews__author-name {
+    font-size: 17px;
+    line-height: 1.41;
+  }
+
+  .reviews__text .nowr {
+    white-space: nowrap;
+  }
+
+  /* кнопка отправки отзыва ДЕСКТОП */
+  .reviews__write-button {
+    width: 175px;
+    margin-top: 8px;
   }
 }
