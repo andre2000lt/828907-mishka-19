@@ -77,10 +77,9 @@
 
     box-sizing: content-box;
 
-    width: 450px;
     min-height: 88px;
     padding: 0;
-    padding-left: calc((100vw - @desktop_width) / 2 + @desktop_padding);
+    width: calc((100% - @desktop_width) / 2 + @desktop_padding + 450px);
     border-bottom: @header-border;
 
     background-color: white;
@@ -94,6 +93,10 @@
     border: 0;
     min-width: 182px;
     max-width: 224px;
+
+    &:first-child {
+      margin-left: calc(100% - 450px);
+    }
 
     &:nth-child(odd) {
       padding-right: 35px;

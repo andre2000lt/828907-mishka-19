@@ -279,7 +279,7 @@
 
     width: 650px;
     padding-right: 50px;
-    padding-left: calc((100vw - @desktop_width) / 2 + @desktop_padding);
+    margin-left: calc((100% - @desktop_width) / 2 + @desktop_padding);
     padding-top: 15px;
     padding-bottom: 15px;
 
@@ -309,6 +309,6 @@
   .main-nav__bonus-text {
     box-sizing: content-box;
     width: 350px;
-    padding-right: calc((100vw - @desktop_width) / 2 + @desktop_padding);
+    padding-right: @desktop_padding;
   }
 }
