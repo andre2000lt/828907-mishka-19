@@ -204,6 +204,8 @@
 .order-form__input-text {
   width: 260px;
   height: 52px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   padding-right: 20px;
   border: none;
   border-bottom: 2px solid black;
@@ -306,7 +308,8 @@
   }
 
   &:hover,
-  &:active {
+  &:active,
+  &:focus {
     border-color: #62d1ba;
   }
 }
@@ -674,7 +677,7 @@
     box-sizing: content-box;
 
     width: 700px;
-    padding-left: calc((100vw - @desktop_width) / 2 + 225px);
     margin: 0;
+    margin-left: calc((100% - @desktop_width) / 2 + 175px);
   }
 }
