@@ -117,7 +117,7 @@
 }
 
 /* Метка выбранного радио  */
-.order-form__radio-input[checked] + .order-form__label--radio {
+.order-form__radio-input:checked + .order-form__label--radio {
   &::before {
     width: 16px;
     height: 16px;
@@ -151,7 +151,7 @@
 }
 
 /* Метка выбранного чекбокса  */
-.order-form__checkbox-input[checked] + .order-form__label--checkbox {
+.order-form__checkbox-input:checked + .order-form__label--checkbox {
   &::before {
     background-image: url("../img/icon-tick.svg");
     background-repeat: no-repeat;
@@ -160,24 +160,30 @@
   }
 }
 
+/* Метка радио / чекбокса при выключеенном состоянии */
+.order-form__radio-input:disabled + .order-form__label--radio,
+.order-form__checkbox-input:disabled + .order-form__label--checkbox {
+  opacity: 0.1;
+}
+
 /* Наведкние на метку радио / чекбокса  */
 .order-form__label--radio:hover::before,
 .order-form__label--checkbox:hover::before {
   border-color: #62d1ba;
 }
 
-.order-form__radio-input[checked] + .order-form__label--radio:hover::before {
+.order-form__radio-input:checked + .order-form__label--radio:hover::before {
   box-shadow: 0 0 0 10px white,
     0 0 0 12px #62d1ba;
 }
 
 /* Нажатие на метку радио / чекбокса  */
-.order-form__label--radio:active::before,
-.order-form__label--checkbox:active::before {
+.order-form__radio-input + .order-form__label--radio:active::before,
+.order-form__checkbox-input + .order-form__label--checkbox:active::before {
   border-color: rgba(68, 68, 68, 0.3);
 }
 
-.order-form__radio-input[checked] + .order-form__label--radio:active::before {
+.order-form__radio-input:checked + .order-form__label--radio:active::before {
   box-shadow: 0 0 0 10px white,
     0 0 0 12px rgba(68, 68, 68, 0.3);
 }
@@ -468,7 +474,7 @@
   }
 
   /* Метка выбранного радио ПЛАНШЕТ */
-  .order-form__radio-input[checked] + .order-form__label--radio {
+  .order-form__radio-input:checked + .order-form__label--radio {
     &::before {
       width: 22px;
       height: 22px;
@@ -477,6 +483,17 @@
       box-shadow: 0 0 0 13px white,
         0 0 0 15px #444444;
     }
+  }
+
+  /* Наведкние на метку радио / чекбокса  */
+  .order-form__label--radio:hover::before,
+  .order-form__label--checkbox:hover::before {
+    border-color: #62d1ba;
+  }
+
+  .order-form__radio-input:checked + .order-form__label--radio:hover::before {
+    box-shadow: 0 0 0 13px white,
+      0 0 0 15px #62d1ba;
   }
 
 
@@ -494,7 +511,7 @@
   }
 
   /* Метка выбранного чекбокса ПЛАНШЕТ */
-  .order-form__checkbox-input[checked] + .order-form__label--checkbox {
+  .order-form__checkbox-input:checked + .order-form__label--checkbox {
     &::before {
       background-size: 33px 22px;
     }
