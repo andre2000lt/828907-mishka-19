@@ -16,6 +16,9 @@ var svgstore = require("gulp-svgstore");
 
 var del = require("del");
 
+var minify = require('gulp-minify');
+var htmlmin = require('gulp-htmlmin');
+
 // Сжатие картинок
 gulp.task("images", function () {
   return gulp.src("source/img/**/*.{png,jpg,svg,webp}")
@@ -48,7 +51,7 @@ gulp.task("sprite", function () {
 gulp.task("copy", function () {
   return gulp.src([
     "source/fonts/**/*.{woff,woff2}",
-    "source/js/**",
+    "source/js/**/*.min.js",
     "source/*.html",
     "source/*.ico"
   ], {
@@ -64,6 +67,24 @@ gulp.task("copy_html", function () {
   ], {
     base: "source"
   })
+  .pipe(htmlmin({ collapseWhitespace: true }))
+  .pipe(gulp.dest("build"));
+});
+
+// Сжатие JS файлов
+gulp.task("min_js", function () {
+  return gulp.src([
+    "source/js/**",
+    "!source/js/**/*.min.js"
+  ], {
+    base: "source"
+  })
+  .pipe(minify({
+    ext:{
+      src:'.js',
+      min:'.min.js'
+    }
+  }))
   .pipe(gulp.dest("build"));
 });
 
@@ -107,5 +128,5 @@ gulp.task("refresh", function (done) {
   done();
 });
 
-gulp.task("build", gulp.series("clean", "copy", "css", "images", "sprite"));
+gulp.task("build", gulp.series("clean", "copy", "min_js", "css", "images", "copy_html", "sprite"));
 gulp.task("start", gulp.series("build", "server"));
