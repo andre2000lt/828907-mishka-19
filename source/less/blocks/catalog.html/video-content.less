@@ -63,6 +63,7 @@
   &:active {
     transform: translate(-50%, -50%) scale(0.8);
     background-size: cover;
+    opacity: 0.3;
   }
 }
 
@@ -126,7 +127,7 @@
   .video-content__image-wrapper {
     position: absolute;
     z-index: 2;
-    left: calc((100vw - @tablet_width) / 2 + @tablet_padding);
+    left: calc((100% - @tablet_width) / 2 + @tablet_padding);
     top: 0;
   }
 

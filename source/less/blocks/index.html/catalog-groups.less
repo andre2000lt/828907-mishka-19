@@ -30,18 +30,18 @@
 /* список групп товаров  */
 .catalog-groups__list {
   .list-style-none();
+
+  &:hover {
+    padding-top: 0;
+  }
 }
 
 .catalog-groups__item {
   display: flex;
   flex-direction: column;
 
-  &--light {
-    background-color: #63d1bb;
-  }
-
-  &--dark {
-    background-color: #56c3b2;
+  &:hover {
+    margin-top: -5px;
   }
 }
 
@@ -56,10 +56,8 @@
   line-height: 1.26;
   color: white;
 
-  min-height: 103px;
-  width: 320px;
-  padding: 20px @mobile_padding;
-  margin: 0 auto;
+  width: 100%;
+  padding: 27px @mobile_padding;
 
   &:active {
     color: rgba(255, 255, 255, 0.3);
@@ -70,9 +68,18 @@
     content: "";
     position: absolute;
     top: 25px;
-    right: 35px;
+    right: calc((100% - @mobile_width) / 2 + 35px);
 
     opacity: 0.5;
+  }
+
+  &:hover {
+    padding-bottom: 32px;
+  }
+
+  &:hover .catalog-groups__item-text {
+    position: relative;
+    top: -5px;
   }
 
   &:hover::before {
@@ -81,6 +88,24 @@
 
   &:active::before {
     opacity: 0.3;
+  }
+
+  &--light {
+    background-color: #63d1bb;
+
+    &:hover,
+    &:active {
+      background-color: #59d5bc;
+    }
+  }
+
+  &--dark {
+    background-color: #56c3b2;
+
+    &:hover,
+    &:active {
+      background-color: #46c1ae;
+    }
   }
 }
 
@@ -95,7 +120,7 @@
 
 .catalog-groups__item-link--toys {
   &::before {
-    right: 28px;
+    right: calc((100% - @mobile_width) / 2 + 28px);
 
     width: 60px;
     height: 60px;
@@ -106,7 +131,9 @@
 
 .catalog-groups__item-text {
   width: 140px;
+  min-height: 49px;
   margin: 0;
+  margin-left: calc((100% - @mobile_width) / 2 + @mobile_padding);
 
   pointer-events: none;
 }
@@ -137,6 +164,7 @@
   .catalog-groups__list {
     display: flex;
     flex-wrap: wrap;
+    align-items: flex-end;
 
     width: 668px;
     margin-left: auto;
@@ -152,10 +180,15 @@
     line-height: 1.5;
 
     width: auto;
-    min-height: 119px;
+    padding-top: 29px;
+    padding-bottom: 29px;
     margin: 0;
     padding-left: 36px;
     padding-right: 34px;
+
+    &:hover {
+      padding-bottom: 34px;
+    }
   }
 
   .catalog-groups__item-link--interior {
@@ -170,6 +203,11 @@
       top: 30px;
       right: 34px;
     }
+  }
+
+  .catalog-groups__item-text {
+    margin: 0;
+    min-height: 61px;
   }
 }
 
