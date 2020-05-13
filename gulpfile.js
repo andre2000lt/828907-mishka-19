@@ -50,7 +50,6 @@ gulp.task("copy", function () {
     "source/fonts/**/*.{woff,woff2}",
     "source/js/**",
     "source/*.html",
-    "source/pixel-glass/**",
     "source/*.ico"
   ], {
     base: "source"

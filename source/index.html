@@ -4,34 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>HTML Academy: Мишка</title>
+  <link rel="preload" href="fonts/opensans.woff2" as="font">
+  <link rel="preload" href="fonts/opensansbold.woff2" as="font">
   <link rel="stylesheet" href="css/style.min.css">
-
-  <!-- Pixel Glass -->
-  <style>
-  HTML {
-    background-repeat: no-repeat;
-    background-position:  50% 0;
-    /* Mobile layout by default */
-    background-image: url( "img/models/mishka-index-mobile-menu.png" );
-  }
-  /* Tablet */
-  @media ( min-width: 768px ) {
-    HTML {
-      /* Tablet layout */
-      background-image: url( "img/models/mishka-index-tablet.png" );
-    }
-  }
-  /* Desktop */
-  @media ( min-width: 1150px ) {
-    HTML {
-      /* Desktop layout */
-      background-image: url( "img/models/mishka-index-desktop.png" );
-    }
-  }
-  </style>
-  <link href="pixel-glass/styles.css" rel="stylesheet">
-  <script src="pixel-glass/script.js"></script>
-  <!-- // Pixel Glass -->
 
   <script>
     // Picture element HTML5 shiv
@@ -115,13 +90,13 @@
       </p>
       <!-- Список групп товаров -->
       <ul class="catalog-groups__list">
-        <li class="catalog-groups__item  catalog-groups__item--light">
-          <a class="catalog-groups__item-link catalog-groups__item-link--interior" href="">
+        <li class="catalog-groups__item">
+          <a class="catalog-groups__item-link catalog-groups__item-link--light catalog-groups__item-link--interior" href="">
             <p class="catalog-groups__item-text">Предметы интерьера</p>
           </a>
         </li>
-        <li class="catalog-groups__item  catalog-groups__item--dark">
-          <a class="catalog-groups__item-link catalog-groups__item-link--toys" href="">
+        <li class="catalog-groups__item">
+          <a class="catalog-groups__item-link catalog-groups__item-link--dark catalog-groups__item-link--toys" href="">
             <p class="catalog-groups__item-text">Детские игрушки</p>
           </a>
         </li>
