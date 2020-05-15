@@ -30,7 +30,7 @@ gulp.task("images", function () {
     imagemin.mozjpeg({quality: 75, progressive: true}),
     imagemin.svgo()
   ]))
- .pipe(gulp.dest("build/img"));
+  .pipe(gulp.dest("build/img"));
 });
 
 // Преобразование в webp
