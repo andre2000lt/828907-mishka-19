@@ -551,6 +551,7 @@
   /* поля ввода текста ПЛАНШЕТ */
   .order-form__input-text-item {
     display: flex;
+    flex-wrap: wrap;
 
     &:not(:last-child) {
       margin-bottom: 23px;
@@ -559,7 +560,6 @@
 
   /* Метки полей ввода ПЛАНШЕТ */
   .order-form__input-text-item .order-form__label {
-    max-width: 230px;
     margin-right: 25px;
   }
 
@@ -574,9 +574,19 @@
     }
 
     &--name {
-      flex-grow: 1;
-
       padding-left: 16px;
+    }
+
+    &--first-name {
+      width: 426px;
+    }
+
+    &--last-name {
+      width: 373px;
+    }
+
+    &--middle-name {
+      width: 373px;
     }
 
     &--tel,
@@ -683,6 +693,20 @@
 
   .order-form__input-list {
     width: 700px;
+  }
+
+  .order-form__input-text {
+    &--first-name {
+      width: 626px;
+    }
+
+    &--last-name {
+      width: 573px;
+    }
+
+    &--middle-name {
+      width: 573px;
+    }
   }
 
   /* Иконка телефона ДЕСКТОП */
