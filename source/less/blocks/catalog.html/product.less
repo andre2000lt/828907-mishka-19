@@ -39,11 +39,19 @@
   margin-bottom: 7px;
 }
 
-.product__title a {
+.product__title-link {
   .general-font-family-bold();
   font-size: 17px;
   line-height: 1.41;
   color: black;
+
+  &:hover {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  &:active {
+    color: rgba(0, 0, 0, 0.3);
+  }
 }
 
 /* описания продукта */
@@ -88,11 +96,6 @@
   fill: #cccccc;
 
   pointer-events: none;
-}
-
-/* выбор характеристик продукта */
-.product__options {
-  // display: none;
 }
 
 /* ПЛАНШЕТ ПРОДУКТ -- */

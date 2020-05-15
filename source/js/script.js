@@ -1,4 +1,6 @@
 // Меню
+var main_nav = document.querySelector(".main-nav");
+
 var site_nav = document.querySelector(".main-nav__site-nav");
 var search = document.querySelector(".main-nav__search-wrapper");
 var cart = document.querySelector(".main-nav__cart-wrapper");
@@ -57,6 +59,15 @@ function clickToCloseOrder(button) {
     }
   });
 }
+
+function closeMenu() {
+  toggle.classList.remove("main-nav__toggle--close");
+  toggle.classList.add("main-nav__toggle--open");
+    hideMenu();
+}
+
+main_nav.onload = closeMenu();
+
 //index
 if(order_button) {
   clickToOrder(order_button);

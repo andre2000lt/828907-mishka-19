@@ -362,13 +362,19 @@
   .order-form__legend {
     display: block;
 
-    width: 168px;
+    width: auto;
+    min-width: 168px;
     padding-right: 15px;
+    padding-bottom: 15px;
     margin: 0;
 
     &::after {
       display: none;
     }
+
+   &--checkbox {
+     padding-top: 20px;
+   }
 
     &--name,
     &--tel,
@@ -387,8 +393,8 @@
     }
 
     &--checkbox {
-      padding-top: 67px;
-      padding-bottom: 34px;
+      padding-top: 47px;
+      padding-bottom: 10px;
     }
 
     &--name {
@@ -420,33 +426,34 @@
 
   .order-form__fieldset > .container {
     display: flex;
+    flex-wrap: wrap;
     border: none;
+  }
+
+  .order-form__checkbox-list-wrapper {
+    width: 500px;
+    overflow: hidden;
   }
 
   .order-form__checkbox-list {
     display: flex;
     flex-wrap: wrap;
 
-    width: 500px;
+    width: 523px;
+    padding-top: 20px;
   }
 
   /* Пункт списка чекбоксов ПЛАНШЕТ */
 
   .order-form__checkbox-item {
-    width: 238px;
+    min-width: 238px;
+    padding-right: 10px;
 
     &:not(:last-child) {
       margin-bottom: 24px;
     }
 
-    &:last-child,
-    &:nth-last-child(2) {
-      margin-bottom: 0;
-    }
-
-    &:nth-child(odd) {
-      margin-right: 23px;
-    }
+    margin-right: 23px;
   }
 
   /* Пункт списка радио ПЛАНШЕТ */
@@ -552,7 +559,7 @@
 
   /* Метки полей ввода ПЛАНШЕТ */
   .order-form__input-text-item .order-form__label {
-    max-width: 150px;
+    max-width: 230px;
     margin-right: 25px;
   }
 
@@ -654,7 +661,7 @@
   .order-form__legend {
     padding-right: 0;
     padding-left: 62px;
-    width: 175px;
+    min-width: 175px;
   }
 
   .order-form__legend span {
@@ -662,22 +669,16 @@
     padding-left: 0;
   }
 
-  .order-form__checkbox-list {
+  .order-form__checkbox-list-wrapper {
     width: 770px;
   }
 
+  .order-form__checkbox-list {
+    width: 795px;
+  }
+
   .order-form__checkbox-item {
-    &:nth-child(odd) {
-      margin-right: 0;
-    }
-
-    &:not(:nth-child(3n)) {
       margin-right: 25px;
-    }
-
-    &:nth-last-child(-n + 3) {
-      margin-bottom: 0;
-    }
   }
 
   .order-form__input-list {
