@@ -61,9 +61,10 @@ function clickToCloseOrder(button) {
 }
 
 function closeMenu() {
+  toggle.classList.remove("main-nav__toggle--hidden");
   toggle.classList.remove("main-nav__toggle--close");
   toggle.classList.add("main-nav__toggle--open");
-    hideMenu();
+  hideMenu();
 }
 
 main_nav.onload = closeMenu();
